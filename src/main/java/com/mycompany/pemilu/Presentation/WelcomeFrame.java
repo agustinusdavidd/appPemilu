@@ -1,4 +1,4 @@
-package com.mycompany.pemilu;
+package com.mycompany.pemilu.Presentation;
 
 /**
  * @author user
@@ -23,8 +23,8 @@ public class WelcomeFrame extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jButton2 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        RegisterButton = new javax.swing.JButton();
+        LoginButton = new javax.swing.JButton();
         filler1 = new javax.swing.Box.Filler(new java.awt.Dimension(1440, 0), new java.awt.Dimension(1440, 0), new java.awt.Dimension(1440, 32767));
         PemiluTitle = new javax.swing.JLabel();
         DomisiliTitle = new javax.swing.JLabel();
@@ -38,15 +38,19 @@ public class WelcomeFrame extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("Selamat Datang");
 
-        jButton2.setText("Register");
-        jButton2.setPreferredSize(new java.awt.Dimension(72, 23));
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        RegisterButton.setText("Register");
+        RegisterButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                RegisterButtonActionPerformed(evt);
             }
         });
 
-        jButton1.setText("Login");
+        LoginButton.setText("Login");
+        LoginButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                LoginButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -55,8 +59,8 @@ public class WelcomeFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(RegisterButton, javax.swing.GroupLayout.DEFAULT_SIZE, 342, Short.MAX_VALUE)
+                    .addComponent(LoginButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(557, 557, 557))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
@@ -67,14 +71,14 @@ public class WelcomeFrame extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(239, 239, 239)
+                .addGap(215, 215, 215)
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(filler1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 277, Short.MAX_VALUE)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 301, Short.MAX_VALUE)
+                .addComponent(LoginButton, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(RegisterButton, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(31, 31, 31))
         );
 
@@ -113,9 +117,27 @@ public class WelcomeFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void RegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterButtonActionPerformed
+        
+        dispose();
+        
+        RegisterFrame rf = new RegisterFrame();
+        
+        rf.setLocationRelativeTo(null);
+        rf.setVisible(true);
+        
+    }//GEN-LAST:event_RegisterButtonActionPerformed
+
+    private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
+        
+        dispose();
+        
+        LoginFrame lf = new LoginFrame();
+        
+        lf.setLocationRelativeTo(null);
+        lf.setVisible(true);
+        
+    }//GEN-LAST:event_LoginButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -155,10 +177,10 @@ public class WelcomeFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel DomisiliTitle;
+    private javax.swing.JButton LoginButton;
     private javax.swing.JLabel PemiluTitle;
+    private javax.swing.JButton RegisterButton;
     private javax.swing.Box.Filler filler1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
