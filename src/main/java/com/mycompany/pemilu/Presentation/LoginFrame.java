@@ -1,6 +1,6 @@
 package com.mycompany.pemilu.Presentation;
 
-import com.mycompany.pemilu.Model.Login;
+import com.mycompany.pemilu.Controller.LoginController;
 import javax.swing.JOptionPane;
 
 /**
@@ -158,7 +158,7 @@ public class LoginFrame extends javax.swing.JFrame {
             String nik = NIKTextField.getText();
             String password = new String(PasswordField.getPassword());
             
-            Login l = new Login();
+            LoginController l = new LoginController();
             l.setNIK(nik);
             l.setPassword(password);
             

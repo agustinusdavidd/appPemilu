@@ -2,18 +2,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.pemilu.Model;
+package com.mycompany.pemilu.Controller;
+
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 
 /**
  *
  * @author user
  */
-public class Login {
+public class LoginController {
     
     private String password;
     private String NIK;
     
-    public Login(){};
+    public LoginController(){};
     
     public void setNIK(String n) throws Exception {
         if(n.length()<16){
@@ -36,6 +40,25 @@ public class Login {
             } else if (p.length() > 5){
                 throw new Exception("Password panjangnya kurang dari 6");
             }   
+        }
+    }
+
+    private String hash256(String pass) {
+        try {
+            MessageDigest md = MessageDigest.getInstance("SHA-256");
+            byte[] encodedHash = md.digest(pass.getBytes(StandardCharsets.UTF_8));
+            StringBuilder hexString = new StringBuilder(2 * encodedHash.length);
+            for (int i = 0; i < encodedHash.length; i++) {
+                String hex = Integer.toHexString(0xff & encodedHash[i]);
+                if(hex.length() == 1) {
+                    hexString.append('0');
+                }
+                hexString.append(hex);
+            }
+            return hexString.toString();
+        } catch (NoSuchAlgorithmException ex) {
+            System.out.println(ex.getMessage());
+            return "";
         }
     }
     
