@@ -1,8 +1,10 @@
 com\mycompany\pemilu\Presentation\WelcomeFrame$1.class
 com\mycompany\pemilu\Presentation\LoginFrame$5.class
 com\mycompany\pemilu\Presentation\MainFrame$1.class
+com\mycompany\pemilu\Presentation\ResultFrame.class
 com\mycompany\pemilu\Presentation\LoginFrame.class
 com\mycompany\pemilu\Presentation\RegisterFrame$4.class
+com\mycompany\pemilu\Presentation\VoteFrame.class
 com\mycompany\pemilu\Presentation\MainFrame$6.class
 com\mycompany\pemilu\Controller\LoginController.class
 com\mycompany\pemilu\Presentation\RegisterFrame$2.class
@@ -16,6 +18,8 @@ com\mycompany\pemilu\Presentation\WelcomeFrame$3.class
 com\mycompany\pemilu\Presentation\RegisterFrame$5.class
 com\mycompany\pemilu\Presentation\LoginFrame$4.class
 com\mycompany\pemilu\Presentation\MainFrame$2.class
+com\mycompany\pemilu\Presentation\ResultFrame$1.class
+com\mycompany\pemilu\Presentation\VoteFrame$1.class
 com\mycompany\pemilu\Presentation\LoginFrame$1.class
 com\mycompany\pemilu\Presentation\MainFrame$4.class
 com\mycompany\pemilu\Presentation\RegisterFrame$3.class

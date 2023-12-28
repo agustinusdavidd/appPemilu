@@ -26,17 +26,101 @@ public class ResultFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        labelHeader = new javax.swing.JLabel();
+        labelPaslon1 = new javax.swing.JLabel();
+        labelPaslon2 = new javax.swing.JLabel();
+        labelPaslon3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        labelPaslon4 = new javax.swing.JLabel();
+        voteValue2 = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(1366, 768));
+
+        jPanel1.setPreferredSize(new java.awt.Dimension(1366, 768));
+        jPanel1.setVerifyInputWhenFocusTarget(false);
+
+        labelHeader.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        labelHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelHeader.setText("Hasil Voting Keseluruhan");
+        labelHeader.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        labelPaslon1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        labelPaslon1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelPaslon1.setText("Total Vote: ");
+
+        labelPaslon2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        labelPaslon2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelPaslon2.setText("Nama Paslon 2");
+
+        labelPaslon3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        labelPaslon3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelPaslon3.setText("Nama Paslon 1");
+
+        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setText("NilaiVote");
+
+        labelPaslon4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        labelPaslon4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelPaslon4.setText("Total Vote: ");
+
+        voteValue2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        voteValue2.setText("NilaiVote");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(474, 474, 474)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(labelPaslon3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(246, 246, 246)
+                        .addComponent(labelPaslon2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(labelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(67, 67, 67)))
+                .addGap(408, 408, 408))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(436, 436, 436)
+                .addComponent(labelPaslon4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(213, 213, 213)
+                .addComponent(labelPaslon1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(voteValue2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(375, 375, 375))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(labelHeader)
+                .addGap(55, 55, 55)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelPaslon2)
+                    .addComponent(labelPaslon3))
+                .addGap(417, 417, 417)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelPaslon1)
+                    .addComponent(jLabel1)
+                    .addComponent(voteValue2)
+                    .addComponent(labelPaslon4))
+                .addContainerGap(155, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -78,5 +162,13 @@ public class ResultFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel labelHeader;
+    private javax.swing.JLabel labelPaslon1;
+    private javax.swing.JLabel labelPaslon2;
+    private javax.swing.JLabel labelPaslon3;
+    private javax.swing.JLabel labelPaslon4;
+    private javax.swing.JLabel voteValue2;
     // End of variables declaration//GEN-END:variables
 }
