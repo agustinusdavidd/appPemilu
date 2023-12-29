@@ -1,11 +1,16 @@
-D:\Project\appPemilu\src\main\java\com\mycompany\pemilu\Presentation\MainFrame.java
-D:\Project\appPemilu\src\main\java\com\mycompany\pemilu\Presentation\WelcomeFrame.java
-D:\Project\appPemilu\src\main\java\com\mycompany\pemilu\Controller\LoginController.java
-D:\Project\appPemilu\src\main\java\com\mycompany\pemilu\Presentation\LoginFrame.java
-D:\Project\appPemilu\src\main\java\com\mycompany\pemilu\Model\Calon.java
-D:\Project\appPemilu\src\main\java\com\mycompany\pemilu\Presentation\ResultFrame.java
-D:\Project\appPemilu\src\main\java\com\mycompany\pemilu\Model\User.java
-D:\Project\appPemilu\src\main\java\com\mycompany\pemilu\Controller\UIController.java
-D:\Project\appPemilu\src\main\java\com\mycompany\pemilu\Presentation\VoteFrame.java
-D:\Project\appPemilu\src\main\java\com\mycompany\pemilu\Presentation\RegisterFrame.java
-D:\Project\appPemilu\src\main\java\com\mycompany\pemilu\Pemilu.java
+C:\PROJECT\New Folder\pemilu\src\main\java\com\mycompany\pemilu\Presentation\StatusUndanganFrame.java
+C:\PROJECT\New Folder\pemilu\src\main\java\com\mycompany\pemilu\Model\Calon.java
+C:\PROJECT\New Folder\pemilu\src\main\java\com\mycompany\pemilu\Presentation\AdminControlFrame.java
+C:\PROJECT\New Folder\pemilu\src\main\java\com\mycompany\pemilu\Presentation\InputPaslonFrame.java
+C:\PROJECT\New Folder\pemilu\src\main\java\com\mycompany\pemilu\Presentation\MainFrame.java
+C:\PROJECT\New Folder\pemilu\src\main\java\com\mycompany\pemilu\Presentation\VoteFrame.java
+C:\PROJECT\New Folder\pemilu\src\main\java\com\mycompany\pemilu\Pemilu.java
+C:\PROJECT\New Folder\pemilu\src\main\java\com\mycompany\pemilu\Presentation\ResultFrame.java
+C:\PROJECT\New Folder\pemilu\src\main\java\com\mycompany\pemilu\Model\User.java
+C:\PROJECT\New Folder\pemilu\src\main\java\com\mycompany\pemilu\Controller\LoginController.java
+C:\PROJECT\New Folder\pemilu\src\main\java\com\mycompany\pemilu\Controller\UIController.java
+C:\PROJECT\New Folder\pemilu\src\main\java\com\mycompany\pemilu\Presentation\WelcomeFrame.java
+C:\PROJECT\New Folder\pemilu\src\main\java\com\mycompany\pemilu\Presentation\InputPetugasFrame.java
+C:\PROJECT\New Folder\pemilu\src\main\java\com\mycompany\pemilu\Presentation\KirimUndanganFrame.java
+C:\PROJECT\New Folder\pemilu\src\main\java\com\mycompany\pemilu\Presentation\RegisterFrame.java
+C:\PROJECT\New Folder\pemilu\src\main\java\com\mycompany\pemilu\Presentation\LoginFrame.java

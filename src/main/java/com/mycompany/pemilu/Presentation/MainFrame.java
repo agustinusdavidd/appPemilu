@@ -31,10 +31,10 @@ public class MainFrame extends javax.swing.JFrame {
         WelcomeLabel = new javax.swing.JLabel();
         ResultButton = new javax.swing.JButton();
         VoteButton = new javax.swing.JButton();
-        ProfileButton = new javax.swing.JButton();
+        AdminButton = new javax.swing.JButton();
         TPSLabel = new javax.swing.JLabel();
-        adminButton = new javax.swing.JButton();
         LogoutButton = new javax.swing.JButton();
+        CekUndanganButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1366, 768));
@@ -62,10 +62,10 @@ public class MainFrame extends javax.swing.JFrame {
             }
         });
 
-        ProfileButton.setText("Logout");
-        ProfileButton.addActionListener(new java.awt.event.ActionListener() {
+        AdminButton.setText("Admin Control");
+        AdminButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ProfileButtonActionPerformed(evt);
+                AdminButtonActionPerformed(evt);
             }
         });
 
@@ -73,18 +73,18 @@ public class MainFrame extends javax.swing.JFrame {
         TPSLabel.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         TPSLabel.setText("Anda terdaftar pada TPS 01");
 
-        adminButton.setText("Logout");
-        adminButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                adminButtonActionPerformed(evt);
-            }
-        });
-
         LogoutButton.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         LogoutButton.setText("Logout");
         LogoutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 LogoutButtonActionPerformed(evt);
+            }
+        });
+
+        CekUndanganButton.setText("Cek Status Undangan");
+        CekUndanganButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CekUndanganButtonActionPerformed(evt);
             }
         });
 
@@ -95,71 +95,87 @@ public class MainFrame extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(CekUndanganButton)
+                                .addGap(18, 18, 18)
+                                .addComponent(LogoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(46, 46, 46))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(AdminButton, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(VoteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ResultButton, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(539, 539, 539))))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(WelcomeLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 1354, Short.MAX_VALUE)
-                            .addComponent(PilihanLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(ProfileButton, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(VoteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ResultButton, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(adminButton, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(548, 548, 548))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(TPSLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(PilihanLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(TPSLabel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addContainerGap())))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(LogoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(46, 46, 46))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(24, 24, 24)
-                .addComponent(LogoutButton, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(LogoutButton, javax.swing.GroupLayout.DEFAULT_SIZE, 37, Short.MAX_VALUE)
+                    .addComponent(CekUndanganButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addComponent(WelcomeLabel)
                 .addGap(18, 18, 18)
                 .addComponent(PilihanLabel)
                 .addGap(18, 18, 18)
                 .addComponent(TPSLabel)
-                .addGap(54, 54, 54)
+                .addGap(47, 47, 47)
                 .addComponent(VoteButton, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(ResultButton, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(ProfileButton, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(adminButton, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(570, Short.MAX_VALUE))
+                .addComponent(AdminButton, javax.swing.GroupLayout.PREFERRED_SIZE, 119, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(714, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void ResultButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResultButtonActionPerformed
-        // TODO add your handling code here:
+        ResultFrame rf = new ResultFrame();
+        
+        dispose();
+        rf.setVisible(true);
+        rf.setLocationRelativeTo(null);
     }//GEN-LAST:event_ResultButtonActionPerformed
 
     private void VoteButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VoteButtonActionPerformed
-        // TODO add your handling code here:
+        VoteFrame vf = new VoteFrame();
+        
+        dispose();
+        vf.setVisible(true);
+        vf.setLocationRelativeTo(null);
     }//GEN-LAST:event_VoteButtonActionPerformed
 
-    private void ProfileButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProfileButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ProfileButtonActionPerformed
-
-    private void adminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_adminButtonActionPerformed
+    private void AdminButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AdminButtonActionPerformed
+        AdminControlFrame acf = new AdminControlFrame();
+        
+        dispose();
+        acf.setVisible(true);
+        acf.setLocationRelativeTo(null);
+    }//GEN-LAST:event_AdminButtonActionPerformed
 
     private void LogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_LogoutButtonActionPerformed
+
+    private void CekUndanganButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CekUndanganButtonActionPerformed
+        StatusUndanganFrame suf = new StatusUndanganFrame();
+        
+        dispose();
+        suf.setVisible(true);
+        suf.setLocationRelativeTo(null);
+    }//GEN-LAST:event_CekUndanganButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -197,13 +213,13 @@ public class MainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AdminButton;
+    private javax.swing.JButton CekUndanganButton;
     private javax.swing.JButton LogoutButton;
     private javax.swing.JLabel PilihanLabel;
-    private javax.swing.JButton ProfileButton;
     private javax.swing.JButton ResultButton;
     private javax.swing.JLabel TPSLabel;
     private javax.swing.JButton VoteButton;
     private javax.swing.JLabel WelcomeLabel;
-    private javax.swing.JButton adminButton;
     // End of variables declaration//GEN-END:variables
 }
