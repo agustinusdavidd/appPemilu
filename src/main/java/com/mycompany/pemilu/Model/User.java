@@ -98,12 +98,12 @@ public class User {
     }
 
     public static ArrayList<User> getAll() throws SQLException {
-        connect();
+        DB.connect();
         String sql = "SELECT * " +
                 "FROM users " +
                 "LEFT JOIN calons " +
                 "ON users.pilihan = calons.id";
-        ResultSet rs = stmt.executeQuery(sql);
+        ResultSet rs = DB.query(sql);
         ArrayList<User> allUser = new ArrayList<>();
         while (rs.next()) {
             allUser.add(new User(
@@ -111,23 +111,27 @@ public class User {
                     rs.getString("users.nama"),
                     rs.getString("users.password"),
                     (rs.getString("users.pilihan")) == null ?
-                            null : new Calon(rs.getInt("calons.id")),
+                            null : new Calon(
+                            rs.getInt("calons.id"),
+                            rs.getString("calons.capres"),
+                            rs.getString("calons.cawapres")
+                    ),
                     rs.getBoolean("users.isAdmin"),
                     rs.getBoolean("users.sudahMemilih")
             ));
         }
-        disconnect();
+        DB.disconnect();
         return allUser;
     }
 
     public static ArrayList<User> getWhere(String sqlWhere) throws SQLException {
-        connect();
+        DB.connect();
         String sql = "SELECT * " +
                 "FROM users " +
                 "LEFT JOIN calons " +
                 "ON users.pilihan = calons.id " +
                 "WHERE "+ sqlWhere;
-        ResultSet rs = stmt.executeQuery(sql);
+        ResultSet rs = DB.query(sql);
         ArrayList<User> allUser = new ArrayList<>();
         while (rs.next()) {
             allUser.add(new User(
@@ -135,58 +139,58 @@ public class User {
                     rs.getString("users.nama"),
                     rs.getString("users.password"),
                     (rs.getString("users.pilihan")) == null ?
-                            null : new Calon(rs.getInt("calons.id")),
+                            null : new Calon(
+                            rs.getInt("calons.id"),
+                            rs.getString("calons.capres"),
+                            rs.getString("calons.cawapres")
+                    ),
                     rs.getBoolean("users.isAdmin"),
                     rs.getBoolean("users.sudahMemilih")
             ));
         }
-        disconnect();
+        DB.disconnect();
         return allUser;
     }
 
-    private static void connect() throws SQLException {
-        conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS);
-        stmt = conn.createStatement();
-    }
-    private static void disconnect() throws SQLException {
-        stmt.close();
-        conn.close();
-    }
-
     public static User getByNIK(String nik) throws SQLException {
-        connect();
+        DB.connect();
         String sql = "SELECT * " +
                 "FROM users " +
                 "LEFT JOIN calons " +
                 "ON users.pilihan = calons.id " +
                 "WHERE users.nik = '"+nik+"'";
-        ResultSet rs = stmt.executeQuery(sql);
+        ResultSet rs = DB.query(sql);
         rs.next();
         User user = new User(
                 rs.getString("users.nik"),
                 rs.getString("users.nama"),
                 rs.getString("users.password"),
                 (rs.getString("users.pilihan")) == null ?
-                        null : new Calon(rs.getInt("calons.id")),
+                        null : new Calon(
+                                rs.getInt("calons.id"),
+                                rs.getString("calons.capres"),
+                                rs.getString("calons.cawapres")
+                        ),
                 rs.getBoolean("users.isAdmin"),
                 rs.getBoolean("users.sudahMemilih")
         );
-        disconnect();
+        DB.disconnect();
         return user;
     }
 
     public static int delete(String nik) throws SQLException {
-        connect();
+        DB.connect();
         String sql = "DELETE FROM users " +
                 "WHERE users.nik = '"+nik+"'";
-        int rs = stmt.executeUpdate(sql);
-        disconnect();
+        int rs = DB.update(sql);
+        DB.disconnect();
         return rs;
     }
 
     public static int create(User user) throws SQLException {
-        connect();
-        PreparedStatement sql = conn.prepareStatement(
+        DB.connect();
+
+        PreparedStatement sql = DB.prepareStatement(
                 "INSERT INTO users " +
                 "VALUES(?, ?, ?, ?, ?, ?)");
         sql.setString(1, user.getNik());
@@ -199,14 +203,15 @@ public class User {
         }
         sql.setBoolean(5, user.isAdmin());
         sql.setBoolean(6, user.isSudahMemilih());
-        int rs = sql.executeUpdate();
-        disconnect();
+
+        int rs = DB.update(sql);
+        DB.disconnect();
         return rs;
     }
 
     public static int update(String oldNik,User user) throws SQLException {
-        connect();
-        PreparedStatement sql = conn.prepareStatement(
+        DB.connect();
+        PreparedStatement sql = DB.prepareStatement(
                 "UPDATE users " +
                         "SET 'nik'=?, " +
                         "'nama'=?, " +
@@ -229,22 +234,14 @@ public class User {
         sql.setBoolean(5, user.isAdmin());
         sql.setBoolean(6, user.isSudahMemilih());
         sql.setString(7,oldNik);
-        int rs = sql.executeUpdate();
-        disconnect();
+        int rs = DB.update(sql);
+        DB.disconnect();
         return rs;
     }
 
     public static void main(String[] args) {
         try {
-            create(new User(
-                    "wow",
-                    "ini",
-                    "user",
-                    null,
-                    false,
-                    false
-            ));
-            User user = getByNIK("wow");
+            User user = getByNIK("tes2");
             System.out.println(user.getPasswordHash());
         } catch (SQLException e) {
             System.out.println(e.getMessage());
