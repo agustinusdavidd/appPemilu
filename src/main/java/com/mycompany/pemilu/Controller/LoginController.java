@@ -35,7 +35,7 @@ public class LoginController {
         if(p.trim()!= null && !p.isEmpty() && p.length() > 5){
             password = p;
         } else {
-            if(p.trim()!= null && !p.isEmpty()){
+            if(p.trim()== null && p.isEmpty()){
                 throw new Exception("Password tidak boleh kosong");
             } else if (p.length() > 5){
                 throw new Exception("Password panjangnya kurang dari 6");

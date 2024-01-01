@@ -3,6 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.pemilu.Presentation;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -199,13 +200,19 @@ public class RegisterFrame extends javax.swing.JFrame {
     char[] password = PasswordField.getPassword();
     char[] confirmPassword = KonfirmasiPasswordField.getPassword();
 
+    // Validate NIK length
+    if (nik.length() != 16) {
+        JOptionPane.showMessageDialog(this, "NIK harus terdiri dari 16 angka");
+        return;
+    }
+    
     // Validate password match
     if (!String.valueOf(password).equals(String.valueOf(confirmPassword))) {
         JOptionPane.showMessageDialog(this, "Password dan konfirmasi password tidak cocok");
         return;
     }
 
-    // Hash the password (You should use a proper password hashing algorithm)
+    // Hash the password
     String hashedPassword = hashPassword(String.valueOf(password));
 
     // Perform database operations
@@ -220,13 +227,13 @@ public class RegisterFrame extends javax.swing.JFrame {
         Connection connection = DriverManager.getConnection(url, user, pw);
 
         // Prepare the SQL statement
-String sql = "INSERT INTO users (nama, nik, password, isAdmin, sudahMemilih) VALUES (?, ?, ?, ?, ?)";
-try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-    preparedStatement.setString(1, nama);
-    preparedStatement.setString(2, nik);
-    preparedStatement.setString(3, hashedPassword);
-    preparedStatement.setBoolean(4, false); // Set it to true if the user is an admin, otherwise false
-    preparedStatement.setBoolean(5, false); // Set it based on your application logic
+        String sql = "INSERT INTO users (nama, nik, password, isAdmin, sudahMemilih) VALUES (?, ?, ?, ?, ?)";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+        preparedStatement.setString(1, nama);
+        preparedStatement.setString(2, nik);
+        preparedStatement.setString(3, hashedPassword);
+        preparedStatement.setBoolean(4, false); // Set it to true if the user is an admin, otherwise false
+        preparedStatement.setBoolean(5, false); // Set it based on your application logic
 
 
             // Execute the update

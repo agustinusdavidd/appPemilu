@@ -190,7 +190,13 @@ public class LoginFrame extends javax.swing.JFrame {
                 // Check if entered password matches the hashed password
                 if (BCrypt.checkpw(password, hashedPasswordFromDB)) {
                     JOptionPane.showMessageDialog(LoginFrame.this, "Login successful!");
-                    // Perform any additional actions you need
+                    // Close the current login frame
+                    dispose();
+
+                    // Open the main frame
+                    MainFrame mainFrame = new MainFrame();
+                    mainFrame.setLocationRelativeTo(null);
+                    mainFrame.setVisible(true);
                 } else {
                     JOptionPane.showMessageDialog(LoginFrame.this, "Incorrect password");
                 }
