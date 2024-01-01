@@ -4,6 +4,8 @@
  */
 package com.mycompany.pemilu.Presentation;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
@@ -166,7 +168,17 @@ public class MainFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_AdminButtonActionPerformed
 
     private void LogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LogoutButtonActionPerformed
-        // TODO add your handling code here:
+            // Display a confirmation dialog before logging out
+        int choice = JOptionPane.showConfirmDialog(MainFrame.this, "Are you sure you want to logout?", "Logout", JOptionPane.YES_NO_OPTION);
+    
+        if (choice == JOptionPane.YES_OPTION) {
+        // Redirect to the login frame
+        dispose();  // Close the current frame
+
+        LoginFrame loginFrame = new LoginFrame();
+        loginFrame.setLocationRelativeTo(null);
+        loginFrame.setVisible(true);
+    }
     }//GEN-LAST:event_LogoutButtonActionPerformed
 
     private void CekUndanganButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CekUndanganButtonActionPerformed
