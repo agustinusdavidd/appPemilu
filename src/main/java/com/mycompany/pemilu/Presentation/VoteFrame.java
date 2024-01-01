@@ -4,6 +4,8 @@
  */
 package com.mycompany.pemilu.Presentation;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
@@ -49,10 +51,20 @@ public class VoteFrame extends javax.swing.JFrame {
         jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jButton1.setText("Pilih");
         buttonGroupPaslon.add(jButton1);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         jButton2.setText("Pilih");
         buttonGroupPaslon.add(jButton2);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         labelPaslon1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         labelPaslon1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -125,12 +137,45 @@ public class VoteFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
+    if (!jButton1.isSelected() && !jButton2.isSelected()) {
+        JOptionPane.showMessageDialog(this, "Anda harus memilih salah satu calon!");
+    } else {
         MainFrame mf = new MainFrame();
-        
         dispose();
         mf.setVisible(true);
         mf.setLocationRelativeTo(null);
+    }
     }//GEN-LAST:event_BackButtonActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+            // TODO add your handling code here:
+    JOptionPane.showMessageDialog(this, "Anda berhasil memilih!");
+
+    // Create an instance of MainFrame
+    MainFrame mf = new MainFrame();
+
+    // Close the current frame (VoteFrame)
+    dispose();
+
+    // Set the visibility of MainFrame
+    mf.setVisible(true);
+    mf.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+            // TODO add your handling code here:
+    JOptionPane.showMessageDialog(this, "Anda berhasil memilih!");
+
+    // Create an instance of MainFrame
+    MainFrame mf = new MainFrame();
+
+    // Close the current frame (VoteFrame)
+    dispose();
+
+    // Set the visibility of MainFrame
+    mf.setVisible(true);
+    mf.setLocationRelativeTo(null);
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments

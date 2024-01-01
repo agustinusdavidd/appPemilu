@@ -4,6 +4,8 @@
  */
 package com.mycompany.pemilu.Presentation;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
@@ -71,6 +73,11 @@ public class InputPaslonFrame extends javax.swing.JFrame {
         });
 
         AddButton.setText("Tambah");
+        AddButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddButtonActionPerformed(evt);
+            }
+        });
 
         BackButton.setText("Back");
         BackButton.addActionListener(new java.awt.event.ActionListener() {
@@ -169,6 +176,17 @@ public class InputPaslonFrame extends javax.swing.JFrame {
         acf.setVisible(true);
         acf.setLocationRelativeTo(null);
     }//GEN-LAST:event_BackButtonActionPerformed
+
+    private void AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButtonActionPerformed
+            // Check if any of the text fields is empty
+    if (NIKKetuaTextField.getText().isEmpty() || NIKWakilTextField.getText().isEmpty() || NIKWakilTextField1.getText().isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Anda belum mengisi semua form!");
+    } else {
+        // Add your code for processing the form data (if needed)
+        // For now, you can show a success message
+        JOptionPane.showMessageDialog(this, "Data berhasil ditambahkan!");
+    }
+    }//GEN-LAST:event_AddButtonActionPerformed
 
     /**
      * @param args the command line arguments

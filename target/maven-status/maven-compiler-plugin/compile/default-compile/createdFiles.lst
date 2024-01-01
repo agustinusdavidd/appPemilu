@@ -1,3 +1,4 @@
+com\mycompany\pemilu\Presentation\InputPaslonFrame$6.class
 com\mycompany\pemilu\Presentation\InputPetugasFrame$1.class
 com\mycompany\pemilu\Presentation\InputPetugasFrame.class
 com\mycompany\pemilu\Presentation\MainFrame$1.class
@@ -7,6 +8,7 @@ com\mycompany\pemilu\Presentation\InputPaslonFrame.class
 com\mycompany\pemilu\Presentation\AdminControlFrame$3.class
 com\mycompany\pemilu\Presentation\VoteFrame.class
 com\mycompany\pemilu\Controller\LoginController.class
+com\mycompany\pemilu\Presentation\VoteFrame$3.class
 com\mycompany\pemilu\Presentation\RegisterFrame$2.class
 com\mycompany\pemilu\Presentation\MainFrame$5.class
 com\mycompany\pemilu\Presentation\MainFrame.class
@@ -20,6 +22,7 @@ com\mycompany\pemilu\Presentation\RegisterFrame$5.class
 com\mycompany\pemilu\Presentation\LoginFrame$4.class
 com\mycompany\pemilu\Presentation\AdminControlFrame$2.class
 com\mycompany\pemilu\Presentation\ResultFrame$1.class
+com\mycompany\pemilu\Model\DB.class
 com\mycompany\pemilu\Presentation\VoteFrame$1.class
 com\mycompany\pemilu\Presentation\LoginFrame$1.class
 com\mycompany\pemilu\Presentation\MainFrame$4.class
@@ -28,6 +31,7 @@ com\mycompany\pemilu\Pemilu.class
 com\mycompany\pemilu\Model\Calon.class
 com\mycompany\pemilu\Presentation\RegisterFrame$1.class
 com\mycompany\pemilu\Presentation\WelcomeFrame$2.class
+com\mycompany\pemilu\Presentation\VoteFrame$4.class
 com\mycompany\pemilu\Presentation\StatusUndanganFrame$1.class
 com\mycompany\pemilu\Presentation\AdminControlFrame$5.class
 com\mycompany\pemilu\Presentation\WelcomeFrame$1.class
