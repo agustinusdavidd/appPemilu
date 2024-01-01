@@ -19,7 +19,7 @@ public class VoteFrame extends javax.swing.JFrame {
         initComponents();
         setLocationRelativeTo(null);
     }
-
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -32,8 +32,8 @@ public class VoteFrame extends javax.swing.JFrame {
         buttonGroupPaslon = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         labelHeader = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        pilih1 = new javax.swing.JButton();
+        pilih2 = new javax.swing.JButton();
         labelPaslon1 = new javax.swing.JLabel();
         labelPaslon2 = new javax.swing.JLabel();
         BackButton = new javax.swing.JButton();
@@ -48,21 +48,21 @@ public class VoteFrame extends javax.swing.JFrame {
         labelHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelHeader.setText("Silahkan Pilih Calon Yang Anda Inginkan");
 
-        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton1.setText("Pilih");
-        buttonGroupPaslon.add(jButton1);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        pilih1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        pilih1.setText("Pilih");
+        buttonGroupPaslon.add(pilih1);
+        pilih1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                pilih1ActionPerformed(evt);
             }
         });
 
-        jButton2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        jButton2.setText("Pilih");
-        buttonGroupPaslon.add(jButton2);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        pilih2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        pilih2.setText("Pilih");
+        buttonGroupPaslon.add(pilih2);
+        pilih2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                pilih2ActionPerformed(evt);
             }
         });
 
@@ -94,12 +94,12 @@ public class VoteFrame extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(487, 487, 487)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pilih1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(labelPaslon2, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE))
                 .addGap(450, 450, 450)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
                     .addComponent(labelPaslon1, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(pilih2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(491, 491, 491))
         );
         jPanel1Layout.setVerticalGroup(
@@ -113,8 +113,8 @@ public class VoteFrame extends javax.swing.JFrame {
                     .addComponent(labelPaslon2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1))
+                    .addComponent(pilih2)
+                    .addComponent(pilih1))
                 .addGap(50, 50, 50)
                 .addComponent(BackButton)
                 .addGap(54, 54, 54))
@@ -137,7 +137,7 @@ public class VoteFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
-    if (!jButton1.isSelected() && !jButton2.isSelected()) {
+    if (!pilih1.isSelected() && !pilih2.isSelected()) {
         JOptionPane.showMessageDialog(this, "Anda harus memilih salah satu calon!");
     } else {
         MainFrame mf = new MainFrame();
@@ -147,7 +147,7 @@ public class VoteFrame extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_BackButtonActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void pilih1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilih1ActionPerformed
             // TODO add your handling code here:
     JOptionPane.showMessageDialog(this, "Anda berhasil memilih!");
 
@@ -160,9 +160,9 @@ public class VoteFrame extends javax.swing.JFrame {
     // Set the visibility of MainFrame
     mf.setVisible(true);
     mf.setLocationRelativeTo(null);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_pilih1ActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void pilih2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilih2ActionPerformed
             // TODO add your handling code here:
     JOptionPane.showMessageDialog(this, "Anda berhasil memilih!");
 
@@ -175,7 +175,7 @@ public class VoteFrame extends javax.swing.JFrame {
     // Set the visibility of MainFrame
     mf.setVisible(true);
     mf.setLocationRelativeTo(null);
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_pilih2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -215,11 +215,11 @@ public class VoteFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackButton;
     private javax.swing.ButtonGroup buttonGroupPaslon;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelHeader;
     private javax.swing.JLabel labelPaslon1;
     private javax.swing.JLabel labelPaslon2;
+    private javax.swing.JButton pilih1;
+    private javax.swing.JButton pilih2;
     // End of variables declaration//GEN-END:variables
 }

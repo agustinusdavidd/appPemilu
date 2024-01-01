@@ -4,6 +4,8 @@
  */
 package com.mycompany.pemilu.Presentation;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
@@ -50,7 +52,18 @@ public class InputPetugasFrame extends javax.swing.JFrame {
 
         TPSComboBox.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "9", "10" }));
 
+        NIKPetugasTextField.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NIKPetugasTextFieldActionPerformed(evt);
+            }
+        });
+
         AddButton.setText("Tambah");
+        AddButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddButtonActionPerformed(evt);
+            }
+        });
 
         BackButton.setText("Back");
         BackButton.addActionListener(new java.awt.event.ActionListener() {
@@ -119,6 +132,20 @@ public class InputPetugasFrame extends javax.swing.JFrame {
         acf.setVisible(true);
         acf.setLocationRelativeTo(null);
     }//GEN-LAST:event_BackButtonActionPerformed
+
+    private void AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButtonActionPerformed
+        if (NIKPetugasTextField.getText().isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Anda belum mengisi semua form!");
+    } else {
+        // Add your code for processing the form data (if needed)
+        // For now, you can show a success message
+        JOptionPane.showMessageDialog(this, "Data berhasil ditambahkan!");
+    }
+    }//GEN-LAST:event_AddButtonActionPerformed
+
+    private void NIKPetugasTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NIKPetugasTextFieldActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NIKPetugasTextFieldActionPerformed
 
     /**
      * @param args the command line arguments

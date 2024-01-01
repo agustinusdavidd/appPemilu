@@ -148,7 +148,7 @@ public class MainFrame extends javax.swing.JFrame {
         this.userName = userName;
         WelcomeLabel.setText("Selamat Datang, " + userName);
     }
-    
+     
     private void ResultButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResultButtonActionPerformed
         ResultFrame rf = new ResultFrame();
         

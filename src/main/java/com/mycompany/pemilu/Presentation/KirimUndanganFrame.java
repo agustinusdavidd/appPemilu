@@ -4,6 +4,8 @@
  */
 package com.mycompany.pemilu.Presentation;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author user
@@ -41,6 +43,11 @@ public class KirimUndanganFrame extends javax.swing.JFrame {
         PaslonHeader.setText("Kirim Undangan");
 
         SendButton.setText("Kirim");
+        SendButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SendButtonActionPerformed(evt);
+            }
+        });
 
         BackButton.setText("Back");
         BackButton.addActionListener(new java.awt.event.ActionListener() {
@@ -127,6 +134,16 @@ public class KirimUndanganFrame extends javax.swing.JFrame {
         acf.setVisible(true);
         acf.setLocationRelativeTo(null);
     }//GEN-LAST:event_BackButtonActionPerformed
+
+    private void SendButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SendButtonActionPerformed
+            if (jTextField1.getText().isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Anda belum mengisi semua form!");
+    } else {
+        // Add your code for processing the form data (if needed)
+        // For now, you can show a success message
+        JOptionPane.showMessageDialog(this, "Data berhasil ditambahkan!");
+    }
+    }//GEN-LAST:event_SendButtonActionPerformed
 
     /**
      * @param args the command line arguments

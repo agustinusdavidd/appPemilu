@@ -25,6 +25,7 @@ com\mycompany\pemilu\Presentation\ResultFrame$1.class
 com\mycompany\pemilu\Model\DB.class
 com\mycompany\pemilu\Presentation\VoteFrame$1.class
 com\mycompany\pemilu\Presentation\LoginFrame$1.class
+com\mycompany\pemilu\Presentation\InputPetugasFrame$4.class
 com\mycompany\pemilu\Presentation\MainFrame$4.class
 com\mycompany\pemilu\Presentation\InputPaslonFrame$3.class
 com\mycompany\pemilu\Pemilu.class
@@ -44,6 +45,7 @@ com\mycompany\pemilu\Presentation\RegisterFrame$4.class
 com\mycompany\pemilu\Presentation\KirimUndanganFrame$2.class
 com\mycompany\pemilu\Presentation\MainFrame$6.class
 com\mycompany\pemilu\Presentation\ResultFrame$2.class
+com\mycompany\pemilu\Presentation\InputPetugasFrame$3.class
 com\mycompany\pemilu\Presentation\MainFrame$3.class
 com\mycompany\pemilu\Presentation\AdminControlFrame$4.class
 com\mycompany\pemilu\Presentation\LoginFrame$2.class
@@ -58,3 +60,4 @@ com\mycompany\pemilu\Model\User.class
 com\mycompany\pemilu\Controller\UIController.class
 com\mycompany\pemilu\Presentation\StatusUndanganFrame.class
 com\mycompany\pemilu\Presentation\LoginFrame$3.class
+com\mycompany\pemilu\Presentation\KirimUndanganFrame$4.class
