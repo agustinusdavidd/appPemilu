@@ -3,7 +3,12 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package com.mycompany.pemilu.Presentation;
-
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+import org.mindrot.jbcrypt.BCrypt;
 /**
  *
  * @author user
@@ -188,9 +193,62 @@ public class RegisterFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_NIKTextFieldActionPerformed
 
     private void RegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_RegisterButtonActionPerformed
+    // Retrieve user input
+    String nama = NamaTextField.getText();
+    String nik = NIKTextField.getText();
+    char[] password = PasswordField.getPassword();
+    char[] confirmPassword = KonfirmasiPasswordField.getPassword();
 
+    // Validate password match
+    if (!String.valueOf(password).equals(String.valueOf(confirmPassword))) {
+        JOptionPane.showMessageDialog(this, "Password dan konfirmasi password tidak cocok");
+        return;
+    }
+
+    // Hash the password (You should use a proper password hashing algorithm)
+    String hashedPassword = hashPassword(String.valueOf(password));
+
+    // Perform database operations
+    try {
+        // Load the JDBC driver
+        Class.forName("com.mysql.cj.jdbc.Driver");
+
+        // Establish a connection
+        String url = "jdbc:mysql://localhost:3306/tubes_pbo";
+        String user = "root";
+        String pw = "";
+        Connection connection = DriverManager.getConnection(url, user, pw);
+
+        // Prepare the SQL statement
+String sql = "INSERT INTO users (nama, nik, password, isAdmin, sudahMemilih) VALUES (?, ?, ?, ?, ?)";
+try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+    preparedStatement.setString(1, nama);
+    preparedStatement.setString(2, nik);
+    preparedStatement.setString(3, hashedPassword);
+    preparedStatement.setBoolean(4, false); // Set it to true if the user is an admin, otherwise false
+    preparedStatement.setBoolean(5, false); // Set it based on your application logic
+
+
+            // Execute the update
+            int rowsAffected = preparedStatement.executeUpdate();
+
+            if (rowsAffected > 0) {
+                JOptionPane.showMessageDialog(this, "Registrasi berhasil!");
+            } else {
+                JOptionPane.showMessageDialog(this, "Registrasi gagal");
+            }
+        }
+    } catch (ClassNotFoundException | SQLException ex) {
+        ex.printStackTrace();
+        JOptionPane.showMessageDialog(this, "Terjadi kesalahan pada database: " + ex.getMessage());
+    }
+    
+    }//GEN-LAST:event_RegisterButtonActionPerformed
+    private String hashPassword(String password) {
+        // Hash the password using BCrypt
+        return BCrypt.hashpw(password, BCrypt.gensalt());
+    }
+    
     private void NamaTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NamaTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NamaTextFieldActionPerformed

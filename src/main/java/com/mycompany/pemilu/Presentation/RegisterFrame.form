@@ -125,7 +125,7 @@
                           <Component id="KonfirmasiPasswordField" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="96" max="32767" attributes="0"/>
+                  <EmptySpace pref="98" max="32767" attributes="0"/>
                   <Component id="RegisterButton" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>

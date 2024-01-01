@@ -1,6 +1,12 @@
 package com.mycompany.pemilu.Presentation;
 
 import com.mycompany.pemilu.Controller.LoginController;
+import org.mindrot.jbcrypt.BCrypt;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import javax.swing.JOptionPane;
 
 /**
@@ -155,23 +161,46 @@ public class LoginFrame extends javax.swing.JFrame {
 
     private void LoginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginButtonActionPerformed
         try {
-            String nik = NIKTextField.getText();
-            String password = new String(PasswordField.getPassword());
-            
-            LoginController l = new LoginController();
-            l.setNIK(nik);
-            l.setPassword(password);
-            
-            // Jalankan Read data di database
-            /*TODO*/
-            
-            JOptionPane.showMessageDialog(LoginFrame.this, "Login successful!");
-            
-            // Kosongkan object l dan beralih ke Frame utama
-            /*TODO*/
-        } catch (Exception e){
-            JOptionPane.showMessageDialog(LoginFrame.this, "Login failed: " + e.getMessage());
+        String nik = NIKTextField.getText();
+        String password = new String(PasswordField.getPassword());
+
+        LoginController l = new LoginController();
+        l.setNIK(nik);
+        l.setPassword(password);
+
+        // Connect to the database
+        String url = "jdbc:mysql://localhost:3306/tubes_pbo";
+        String user = "root";
+        String pw = "";
+        Connection connection = DriverManager.getConnection(url, user, pw);
+
+        // Prepare the SQL statement
+        String sql = "SELECT * FROM users WHERE nik = ?";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, nik);
+
+            // Execute the query
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            // Check if the user exists
+            if (resultSet.next()) {
+                // Retrieve hashed password from the database
+                String hashedPasswordFromDB = resultSet.getString("password");
+
+                // Check if entered password matches the hashed password
+                if (BCrypt.checkpw(password, hashedPasswordFromDB)) {
+                    JOptionPane.showMessageDialog(LoginFrame.this, "Login successful!");
+                    // Perform any additional actions you need
+                } else {
+                    JOptionPane.showMessageDialog(LoginFrame.this, "Incorrect password");
+                }
+            } else {
+                JOptionPane.showMessageDialog(LoginFrame.this, "User not found");
+            }
         }
+    } catch (Exception e) {
+        JOptionPane.showMessageDialog(LoginFrame.this, "Login failed: " + e.getMessage());
+    }
     }//GEN-LAST:event_LoginButtonActionPerformed
 
     private void RegisterButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegisterButtonActionPerformed
