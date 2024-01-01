@@ -154,7 +154,12 @@ public class LoginFrame extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    private MainFrame mainFrame;
+    public void setMainFrame(MainFrame mainFrame) {
+        this.mainFrame = mainFrame;
+    }
+    
     private void NIKTextFieldActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NIKTextFieldActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_NIKTextFieldActionPerformed
@@ -186,7 +191,9 @@ public class LoginFrame extends javax.swing.JFrame {
             if (resultSet.next()) {
                 // Retrieve hashed password from the database
                 String hashedPasswordFromDB = resultSet.getString("password");
-
+                // Retrieve user's name from the database
+                String userName = resultSet.getString("nama");
+                
                 // Check if entered password matches the hashed password
                 if (BCrypt.checkpw(password, hashedPasswordFromDB)) {
                     JOptionPane.showMessageDialog(LoginFrame.this, "Login successful!");
@@ -197,6 +204,8 @@ public class LoginFrame extends javax.swing.JFrame {
                     MainFrame mainFrame = new MainFrame();
                     mainFrame.setLocationRelativeTo(null);
                     mainFrame.setVisible(true);
+                    mainFrame.setUserName(userName);
+                    
                 } else {
                     JOptionPane.showMessageDialog(LoginFrame.this, "Incorrect password");
                 }

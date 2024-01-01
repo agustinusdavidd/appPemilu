@@ -241,6 +241,13 @@ public class RegisterFrame extends javax.swing.JFrame {
 
             if (rowsAffected > 0) {
                 JOptionPane.showMessageDialog(this, "Registrasi berhasil!");
+                 // Close the current frame
+                dispose();
+
+                // Open the LoginFrame
+                LoginFrame lf = new LoginFrame();
+                lf.setLocationRelativeTo(null);
+                lf.setVisible(true);
             } else {
                 JOptionPane.showMessageDialog(this, "Registrasi gagal");
             }

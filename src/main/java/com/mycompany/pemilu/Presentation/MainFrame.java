@@ -143,6 +143,12 @@ public class MainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private String userName;
+    public void setUserName(String userName) {
+        this.userName = userName;
+        WelcomeLabel.setText("Selamat Datang, " + userName);
+    }
+    
     private void ResultButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ResultButtonActionPerformed
         ResultFrame rf = new ResultFrame();
         
@@ -219,7 +225,13 @@ public class MainFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainFrame().setVisible(true);
+                MainFrame mainFrame = new MainFrame();
+                mainFrame.setVisible(true);
+
+                LoginFrame loginFrame = new LoginFrame();
+                loginFrame.setMainFrame(mainFrame);  // Set the mainFrame
+                loginFrame.setLocationRelativeTo(null);
+                loginFrame.setVisible(true);
             }
         });
     }
