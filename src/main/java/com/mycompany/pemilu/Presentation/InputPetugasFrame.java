@@ -1,9 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.mycompany.pemilu.Presentation;
 
+import com.mycompany.pemilu.Model.TPS;
+import com.mycompany.pemilu.Model.User;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -164,7 +165,17 @@ public class InputPetugasFrame extends javax.swing.JFrame {
             AdminControlFrame ac = new AdminControlFrame();
             dispose();
             ac.setVisible(true);
-            ac.setLocationRelativeTo(null);  
+            ac.setLocationRelativeTo(null);
+            
+            User user;
+            
+            try {
+                user = User.getByNIK(NIKPetugasTextField.getText());
+                TPS tps = new TPS("Bojongsoang", user);
+                TPS.create(tps);
+            } catch (SQLException ex) {
+                Logger.getLogger(InputPetugasFrame.class.getName()).log(Level.SEVERE, null, ex);
+            }
     }else {
         // Add your code for processing the form data (if needed)
         // For now, you can show a success message
