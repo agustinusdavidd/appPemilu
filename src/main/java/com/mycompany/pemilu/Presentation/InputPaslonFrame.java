@@ -4,6 +4,10 @@
  */
 package com.mycompany.pemilu.Presentation;
 
+import com.mycompany.pemilu.Model.Calon;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -199,16 +203,23 @@ public class InputPaslonFrame extends javax.swing.JFrame {
 
     private void AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButtonActionPerformed
             // Check if any of the text fields is empty
-    if (NIKKetuaTextField.getText().isEmpty() || NIKWakilTextField.getText().isEmpty() || VisiMisiTextArea.getText().isEmpty()) {
+    if (NIKKetuaTextField.getText().isEmpty() && NIKWakilTextField.getText().isEmpty() && VisiMisiTextArea.getText().isEmpty()) {
         JOptionPane.showMessageDialog(this, "Anda belum mengisi semua form!");
-    } else if((!NIKKetuaTextField.getText().isEmpty() || !NIKWakilTextField.getText().isEmpty() || !VisiMisiTextArea.getText().isEmpty()) && NIKKetuaTextField.getText().length() > 8 && NIKWakilTextField.getText().length() > 8){
+    } else if((!NIKKetuaTextField.getText().isEmpty() && !NIKWakilTextField.getText().isEmpty() && !VisiMisiTextArea.getText().isEmpty()) && NIKKetuaTextField.getText().length() > 8 && NIKWakilTextField.getText().length() > 8){
         // Add your code for processing the form data (if needed)
         // For now, you can show a success message
         JOptionPane.showMessageDialog(this, "Data berhasil ditambahkan!");
-            AdminControlFrame ac = new AdminControlFrame();
-            dispose();
-            ac.setVisible(true);
-            ac.setLocationRelativeTo(null);
+        AdminControlFrame ac = new AdminControlFrame();
+        dispose();
+        ac.setVisible(true);
+        ac.setLocationRelativeTo(null);
+        try {
+            Calon c = new Calon((int) NomorUrutComboBox.getSelectedItem(), NIKKetuaTextField.getText(), NIKWakilTextField.getText(), VisiMisiTextArea.getText());
+            Calon.create(c);
+        } catch (SQLException ex) {
+            Logger.getLogger(InputPaslonFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }else {
         // Add your code for processing the form data (if needed)
         // For now, you can show a success message
