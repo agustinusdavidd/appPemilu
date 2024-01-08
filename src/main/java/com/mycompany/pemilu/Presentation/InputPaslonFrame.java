@@ -29,23 +29,26 @@ public class InputPaslonFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         PaslonHeader = new javax.swing.JLabel();
         NomorUrutLabel = new javax.swing.JLabel();
         NomorUrutComboBox = new javax.swing.JComboBox<>();
+        NIKKetuaLabel = new javax.swing.JLabel();
         NIKWakilLabel = new javax.swing.JLabel();
         NIKKetuaTextField = new javax.swing.JTextField();
-        NIKKetuaLabel = new javax.swing.JLabel();
         NIKWakilTextField = new javax.swing.JTextField();
+        VisiMisiLabel = new javax.swing.JLabel();
         AddButton = new javax.swing.JButton();
         BackButton = new javax.swing.JButton();
-        VisiMisiLabel = new javax.swing.JLabel();
-        NIKWakilTextField1 = new javax.swing.JTextField();
+        VisiMisiTextArea = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        PaslonHeader.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jPanel1.setPreferredSize(new java.awt.Dimension(600, 400));
+
+        PaslonHeader.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         PaslonHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        PaslonHeader.setText("Input Paslon");
+        PaslonHeader.setText("Input Pasangan Calon");
 
         NomorUrutLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         NomorUrutLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
@@ -58,19 +61,23 @@ public class InputPaslonFrame extends javax.swing.JFrame {
             }
         });
 
-        NIKWakilLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        NIKWakilLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        NIKWakilLabel.setText("NIK Wakil Ketua :");
-
         NIKKetuaLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         NIKKetuaLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
         NIKKetuaLabel.setText("NIK Ketua :");
+
+        NIKWakilLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        NIKWakilLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        NIKWakilLabel.setText("NIK Wakil Ketua :");
 
         NIKWakilTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NIKWakilTextFieldActionPerformed(evt);
             }
         });
+
+        VisiMisiLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        VisiMisiLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
+        VisiMisiLabel.setText("Visi Misi :");
 
         AddButton.setText("Tambah");
         AddButton.addActionListener(new java.awt.event.ActionListener() {
@@ -86,72 +93,89 @@ public class InputPaslonFrame extends javax.swing.JFrame {
             }
         });
 
-        VisiMisiLabel.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        VisiMisiLabel.setHorizontalAlignment(javax.swing.SwingConstants.TRAILING);
-        VisiMisiLabel.setText("Visi Misi :");
+        VisiMisiTextArea.setColumns(20);
+        VisiMisiTextArea.setRows(5);
 
-        NIKWakilTextField1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NIKWakilTextField1ActionPerformed(evt);
-            }
-        });
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(PaslonHeader, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(NIKKetuaLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NomorUrutLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(NIKWakilLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(VisiMisiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(NIKKetuaTextField)
+                            .addComponent(NIKWakilTextField)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(NomorUrutComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(VisiMisiTextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 2, Short.MAX_VALUE)))))
+                .addGap(110, 110, 110))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(255, 255, 255)
+                .addComponent(AddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(27, 27, 27)
+                        .addComponent(PaslonHeader))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(BackButton)))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(NomorUrutLabel)
+                    .addComponent(NomorUrutComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NIKKetuaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NIKKetuaLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(NIKWakilLabel)
+                    .addComponent(NIKWakilTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(147, 147, 147)
+                        .addComponent(AddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(VisiMisiLabel)
+                        .addComponent(VisiMisiTextArea, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(31, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(636, 636, 636)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(AddButton, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
-                    .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(601, 601, 601))
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(PaslonHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(NIKKetuaLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 542, Short.MAX_VALUE)
-                            .addComponent(NomorUrutLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(VisiMisiLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NIKWakilLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(81, 81, 81)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(NomorUrutComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NIKKetuaTextField)
-                            .addComponent(NIKWakilTextField)
-                            .addComponent(NIKWakilTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 285, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(438, 438, 438))))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(PaslonHeader)
-                .addGap(81, 81, 81)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NomorUrutLabel)
-                    .addComponent(NomorUrutComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NIKKetuaLabel)
-                    .addComponent(NIKKetuaTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(NIKWakilLabel)
-                    .addComponent(NIKWakilTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(NIKWakilTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(VisiMisiLabel))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 119, Short.MAX_VALUE)
-                .addComponent(AddButton, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(BackButton)
-                .addGap(55, 55, 55))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -165,10 +189,6 @@ public class InputPaslonFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_NIKWakilTextFieldActionPerformed
 
-    private void NIKWakilTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NIKWakilTextField1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_NIKWakilTextField1ActionPerformed
-
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
         AdminControlFrame acf = new AdminControlFrame();
         
@@ -179,7 +199,7 @@ public class InputPaslonFrame extends javax.swing.JFrame {
 
     private void AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButtonActionPerformed
             // Check if any of the text fields is empty
-    if (NIKKetuaTextField.getText().isEmpty() || NIKWakilTextField.getText().isEmpty() || NIKWakilTextField1.getText().isEmpty()) {
+    if (NIKKetuaTextField.getText().isEmpty() || NIKWakilTextField.getText().isEmpty() || VisiMisiTextArea.getText().isEmpty()) {
         JOptionPane.showMessageDialog(this, "Anda belum mengisi semua form!");
     } else {
         // Add your code for processing the form data (if needed)
@@ -230,10 +250,11 @@ public class InputPaslonFrame extends javax.swing.JFrame {
     private javax.swing.JTextField NIKKetuaTextField;
     private javax.swing.JLabel NIKWakilLabel;
     private javax.swing.JTextField NIKWakilTextField;
-    private javax.swing.JTextField NIKWakilTextField1;
     private javax.swing.JComboBox<String> NomorUrutComboBox;
     private javax.swing.JLabel NomorUrutLabel;
     private javax.swing.JLabel PaslonHeader;
     private javax.swing.JLabel VisiMisiLabel;
+    private javax.swing.JTextArea VisiMisiTextArea;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
