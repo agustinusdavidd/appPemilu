@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package com.mycompany.pemilu.Presentation;
 
 import javax.swing.JOptionPane;
@@ -30,25 +26,29 @@ public class VoteFrame extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroupPaslon = new javax.swing.ButtonGroup();
-        jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
         labelHeader = new javax.swing.JLabel();
-        pilih1 = new javax.swing.JButton();
-        pilih2 = new javax.swing.JButton();
-        labelPaslon1 = new javax.swing.JLabel();
         labelPaslon2 = new javax.swing.JLabel();
+        pilih1 = new javax.swing.JButton();
         BackButton = new javax.swing.JButton();
+        labelPaslon1 = new javax.swing.JLabel();
+        pilih2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(1366, 768));
-        setSize(new java.awt.Dimension(1366, 768));
+        setPreferredSize(new java.awt.Dimension(600, 400));
+        setSize(new java.awt.Dimension(600, 400));
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(1618, 768));
+        jPanel2.setPreferredSize(new java.awt.Dimension(600, 400));
 
-        labelHeader.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        labelHeader.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         labelHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelHeader.setText("Silahkan Pilih Calon Yang Anda Inginkan");
 
-        pilih1.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        labelPaslon2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        labelPaslon2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelPaslon2.setText("Nama Paslon 1");
+
+        pilih1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         pilih1.setText("Pilih");
         buttonGroupPaslon.add(pilih1);
         pilih1.addActionListener(new java.awt.event.ActionListener() {
@@ -57,7 +57,18 @@ public class VoteFrame extends javax.swing.JFrame {
             }
         });
 
-        pilih2.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        BackButton.setText("Back");
+        BackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackButtonActionPerformed(evt);
+            }
+        });
+
+        labelPaslon1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        labelPaslon1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelPaslon1.setText("Nama Paslon 2");
+
+        pilih2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         pilih2.setText("Pilih");
         buttonGroupPaslon.add(pilih2);
         pilih2.addActionListener(new java.awt.event.ActionListener() {
@@ -66,105 +77,96 @@ public class VoteFrame extends javax.swing.JFrame {
             }
         });
 
-        labelPaslon1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        labelPaslon1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelPaslon1.setText("Nama Paslon 2");
-
-        labelPaslon2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        labelPaslon2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelPaslon2.setText("Nama Paslon 1");
-
-        BackButton.setText("Back");
-        BackButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BackButtonActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(labelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGap(487, 487, 487)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(pilih1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(labelPaslon2, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE))
-                .addGap(450, 450, 450)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
-                    .addComponent(labelPaslon1, javax.swing.GroupLayout.DEFAULT_SIZE, 189, Short.MAX_VALUE)
-                    .addComponent(pilih2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(491, 491, 491))
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(BackButton)
+                .addGap(30, 30, 30)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelPaslon2)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGap(12, 12, 12)
+                                .addComponent(pilih1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(149, 149, 149)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelPaslon1)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                                .addComponent(pilih2, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12))))
+                    .addComponent(labelHeader))
+                .addContainerGap(89, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(56, 56, 56)
-                .addComponent(labelHeader)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 462, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(17, 17, 17)
+                        .addComponent(BackButton))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
+                        .addComponent(labelHeader)))
+                .addGap(28, 28, 28)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelPaslon1)
                     .addComponent(labelPaslon2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(pilih2)
-                    .addComponent(pilih1))
-                .addGap(50, 50, 50)
-                .addComponent(BackButton)
-                .addGap(54, 54, 54))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 179, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(pilih2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pilih1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(77, 77, 77))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1806, Short.MAX_VALUE)
-                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 769, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
-    if (!pilih1.isSelected() && !pilih2.isSelected()) {
-        JOptionPane.showMessageDialog(this, "Anda harus memilih salah satu calon!");
-    } else {
-        MainFrame mf = new MainFrame();
-        dispose();
-        mf.setVisible(true);
-        mf.setLocationRelativeTo(null);
-    }
+        if (!pilih1.isSelected() && !pilih2.isSelected()) {
+            JOptionPane.showMessageDialog(this, "Anda harus memilih salah satu calon!");
+        } else {
+            MainFrame mf = new MainFrame();
+            dispose();
+            mf.setVisible(true);
+            mf.setLocationRelativeTo(null);
+        }
     }//GEN-LAST:event_BackButtonActionPerformed
 
     private void pilih1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilih1ActionPerformed
-            // TODO add your handling code here:
-    JOptionPane.showMessageDialog(this, "Anda berhasil memilih!");
+        JOptionPane.showMessageDialog(this, "Anda berhasil memilih!");
 
-    // Create an instance of MainFrame
-    MainFrame mf = new MainFrame();
+        // Create an instance of MainFrame
+        MainFrame mf = new MainFrame();
 
-    // Close the current frame (VoteFrame)
-    dispose();
+        // Close the current frame (VoteFrame)
+        dispose();
 
-    // Set the visibility of MainFrame
-    mf.setVisible(true);
-    mf.setLocationRelativeTo(null);
+        // Set the visibility of MainFrame
+        mf.setVisible(true);
+        mf.setLocationRelativeTo(null);
     }//GEN-LAST:event_pilih1ActionPerformed
 
     private void pilih2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pilih2ActionPerformed
-            // TODO add your handling code here:
-    JOptionPane.showMessageDialog(this, "Anda berhasil memilih!");
+        JOptionPane.showMessageDialog(this, "Anda berhasil memilih!");
 
     // Create an instance of MainFrame
     MainFrame mf = new MainFrame();
@@ -177,9 +179,6 @@ public class VoteFrame extends javax.swing.JFrame {
     mf.setLocationRelativeTo(null);
     }//GEN-LAST:event_pilih2ActionPerformed
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -215,7 +214,7 @@ public class VoteFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackButton;
     private javax.swing.ButtonGroup buttonGroupPaslon;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel labelHeader;
     private javax.swing.JLabel labelPaslon1;
     private javax.swing.JLabel labelPaslon2;
