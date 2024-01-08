@@ -9,43 +9,35 @@ public class Calon {
     private int id;
     private String Capres;
     private String Cawapres;
+    private String visiMisi;
 
-    protected Calon(int id, String Capres, String Cawapres) {
+    public Calon(int id, String Capres, String Cawapres, String visiMisi) {
         this.id = id;
         this.Capres = Capres;
         this.Cawapres = Cawapres;
+        this.visiMisi = visiMisi;
     }
 
-    protected Calon(int id, User Capres, User Cawapres) {
+    public Calon(int id, User Capres, User Cawapres, String visiMisi) {
         this.id = id;
         setCapres(Capres);
         setCawapres(Cawapres);
+        this.visiMisi = visiMisi;
     }
-    protected Calon(int id, String Capres, User Cawapres) {
+    public Calon(int id, String Capres, User Cawapres, String visiMisi) {
         this.id = id;
         this.Capres = Capres;
         setCawapres(Cawapres);
+        this.visiMisi = visiMisi;
     }
-    protected Calon(int id, User Capres, String Cawapres) {
+    public Calon(int id, User Capres, String Cawapres, String visiMisi) {
         this.id = id;
         setCapres(Capres);
         this.Cawapres = Cawapres;
+        this.visiMisi = visiMisi;
     }
     public Calon(String Capres, String Cawapres) {
         this.Capres = Capres;
-        this.Cawapres = Cawapres;
-    }
-
-    public Calon(User Capres, User Cawapres) {
-        setCapres(Capres);
-        setCawapres(Cawapres);
-    }
-    public Calon(String Capres, User Cawapres) {
-        this.Capres = Capres;
-        setCawapres(Cawapres);
-    }
-    public Calon(User Capres, String Cawapres) {
-        setCapres(Capres);
         this.Cawapres = Cawapres;
     }
 
@@ -77,7 +69,8 @@ public class Calon {
             calons.add(new Calon(
                     rs.getInt("id"),
                     rs.getString("capres"),
-                    rs.getString("cawapres")
+                    rs.getString("cawapres"),
+                    rs.getString("visi_misi")
             ));
         }
         DB.disconnect();
@@ -93,26 +86,22 @@ public class Calon {
         Calon calon = new Calon(
                     rs.getInt("id"),
                     rs.getString("capres"),
-                    rs.getString("cawapres")
+                    rs.getString("cawapres"),
+                    rs.getString("visi_misi")
             );
         DB.disconnect();
         return calon;
     }
     public static int create(Calon calon) throws SQLException {
         DB.connect();
-        PreparedStatement sql = DB.prepareStatement("INSERT INTO calons(capres, cawapres) " +
-                "VALUES (?, ?)");
-        sql.setString(1, calon.Capres);
-        sql.setString(2, calon.Cawapres);
+        PreparedStatement sql = DB.prepareStatement("INSERT INTO calons(id, capres, cawapres) " +
+                "VALUES (?, ?, ?)");
+        sql.setInt(1, calon.getId());
+        sql.setString(2, calon.Capres);
+        sql.setString(3, calon.Cawapres);
         int rs = DB.update(sql);
         DB.disconnect();
         return rs;
-    }
-    public static int create(User capres, User cawapres) throws SQLException {
-        return create(new Calon(1, capres, cawapres));
-    }
-    public static int create(String capres, String cawapres) throws SQLException {
-        return create(new Calon(1, capres, cawapres));
     }
     public static int update(int toChange,Calon calon) throws SQLException {
         DB.connect();
@@ -129,16 +118,9 @@ public class Calon {
 
     public static void main(String[] args) {
         try {
-            ArrayList<Calon> tes = getAll();
-            for (Calon calon : tes) {
-                System.out.println(calon.id);
-                System.out.println(calon.Capres);
-                System.out.println(calon.Cawapres);
-            }
-            Calon tes2 = getById(3);
-            System.out.println(tes2.Capres + " " + tes2.Cawapres);
+            Calon.create(new Calon(5, "tes2", "wow", "ini visi misi"));
         } catch (SQLException e) {
-            System.out.println(e.getMessage());
+            throw new RuntimeException(e);
         }
 
     }
