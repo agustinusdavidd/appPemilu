@@ -116,11 +116,11 @@ public class AdminControl extends javax.swing.JFrame {
     }
 
     private void KirimUndanganButtonActionPerformed(java.awt.event.ActionEvent evt) {
-        KirimUndangan kuf = new KirimUndangan();
+        KirimUndangan ku = new KirimUndangan();
 
         dispose();
-        kuf.setVisible(true);
-        kuf.setLocationRelativeTo(null);
+        ku.setVisible(true);
+        ku.setLocationRelativeTo(null);
     }
 
     private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {

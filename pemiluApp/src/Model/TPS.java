@@ -8,19 +8,18 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class TPS {
-
     private int id;
     private String lokasi;
     private String nik_panitia;
     private User panitia = null;
 
-    public TPS(int id, String lokasi, String nik_panitia) {
+    protected TPS(int id, String lokasi, String nik_panitia) {
         this.id = id;
         this.lokasi = lokasi;
         this.nik_panitia = nik_panitia;
     }
 
-    public TPS(int id, String lokasi, User panitia) {
+    protected TPS(int id, String lokasi, User panitia) {
         this.id = id;
         this.lokasi = lokasi;
         this.nik_panitia = panitia.getNik();
@@ -83,7 +82,7 @@ public class TPS {
                         "VALUES(?, ?)"
         );
         sql.setString(1, tps.getLokasi());
-        sql.setString(2, tps.getPanitia().getNik());
+        sql.setString(2, tps.nik_panitia);
         int rs = Database.update(sql);
         Database.disconnect();
         return rs;
@@ -181,6 +180,15 @@ public class TPS {
     }
     public static int delete(TPS tps) throws SQLException {
         return delete(tps.getId());
+    }
+
+    public static void main(String[] args) {
+        try {
+            TPS tps = new TPS("bandung", "");
+            TPS.create(tps);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
     
 }

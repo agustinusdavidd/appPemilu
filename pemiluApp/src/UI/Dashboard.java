@@ -1,6 +1,7 @@
 package UI;
 
 import Model.Remember;
+import Model.TPS;
 import Model.User;
 import Network.Database;
 import org.mindrot.jbcrypt.BCrypt;
@@ -12,6 +13,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 public class Dashboard extends javax.swing.JFrame {
+
+    Remember r = new Remember();
+    String nama = r.getNama();
+    String nik = r.getNikLogin();
     /**
      * Creates new form Dashboard
      */
@@ -144,11 +149,7 @@ public class Dashboard extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>                        
-
-    Remember r = new Remember();
-    String nama = r.getNama();
-    String nik = r.getNikLogin();
+    }// </editor-fold>
 
     public void setUserName() {
         WelcomeLabel.setText("Selamat Datang, " + nama);
@@ -161,6 +162,14 @@ public class Dashboard extends javax.swing.JFrame {
             if(!user.isAdmin()){
                 AdminButton.setVisible(false);
             }
+
+//            TPS tps = user.getTPS();
+//            System.out.println(tps + " id " + tps.getId());
+//            if(tps.getId() > -1) {
+//                TPSLabel.setText("Anda terdaftar pada TPS " + tps.getId());
+//            } else {
+//                TPSLabel.setText("Anda belum menerima surat undangan");
+//            }
         } catch (Exception e) {
             JOptionPane.showMessageDialog(this, "Terjadi kesalahan pada database: " + e.getMessage());
         }
