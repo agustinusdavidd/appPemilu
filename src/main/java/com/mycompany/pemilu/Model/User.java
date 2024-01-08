@@ -20,6 +20,7 @@ public class User {
     private Calon pilihan;
     private boolean isAdmin;
     private boolean sudahMemilih;
+    private boolean isInvited;
 
     public User(String nik, String nama, String password,Calon pilihan, boolean isAdmin, boolean sudahMemilih) {
         this.nik = nik;
@@ -28,6 +29,15 @@ public class User {
         this.pilihan = pilihan;
         this.isAdmin = isAdmin;
         this.sudahMemilih = sudahMemilih;
+    }
+    public User(String nik, String nama, String password,Calon pilihan, boolean isAdmin, boolean sudahMemilih, boolean isInvited) {
+        this.nik = nik;
+        this.nama = nama;
+        this.passwordHash = hash256(password);
+        this.pilihan = pilihan;
+        this.isAdmin = isAdmin;
+        this.sudahMemilih = sudahMemilih;
+        this.isInvited = isInvited;
     }
 
     public String getNik() {
@@ -78,6 +88,14 @@ public class User {
         this.pilihan = pilihan;
     }
 
+    public boolean isInvited() {
+        return isInvited;
+    }
+
+    public void setInvited(boolean invited) {
+        isInvited = invited;
+    }
+
     private String hash256(String pass) {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
@@ -117,7 +135,8 @@ public class User {
                             rs.getString("calons.cawapres")
                     ),
                     rs.getBoolean("users.isAdmin"),
-                    rs.getBoolean("users.sudahMemilih")
+                    rs.getBoolean("users.sudahMemilih"),
+                    rs.getBoolean("users.isInvited")
             ));
         }
         DB.disconnect();
@@ -145,12 +164,15 @@ public class User {
                             rs.getString("calons.cawapres")
                     ),
                     rs.getBoolean("users.isAdmin"),
-                    rs.getBoolean("users.sudahMemilih")
+                    rs.getBoolean("users.sudahMemilih"),
+                    rs.getBoolean("users.isInvited")
             ));
         }
         DB.disconnect();
         return allUser;
     }
+
+
 
     public static User getByNIK(String nik) throws SQLException {
         DB.connect();
@@ -172,7 +194,8 @@ public class User {
                                 rs.getString("calons.cawapres")
                         ),
                 rs.getBoolean("users.isAdmin"),
-                rs.getBoolean("users.sudahMemilih")
+                rs.getBoolean("users.sudahMemilih"),
+                rs.getBoolean("users.isInvited")
         );
         DB.disconnect();
         return user;
@@ -192,7 +215,7 @@ public class User {
 
         PreparedStatement sql = DB.prepareStatement(
                 "INSERT INTO users " +
-                "VALUES(?, ?, ?, ?, ?, ?)");
+                "VALUES(?, ?, ?, ?, ?, ?, ?)");
         sql.setString(1, user.getNik());
         sql.setString(2, user.getNama());
         sql.setString(3, user.getPasswordHash());
@@ -202,7 +225,8 @@ public class User {
             sql.setInt(4, user.getPilihan().getId());
         }
         sql.setBoolean(5, user.isAdmin());
-        sql.setBoolean(6, user.isSudahMemilih());
+        sql.setBoolean(6, user.isInvited());
+        sql.setBoolean(7, user.isSudahMemilih());
 
         int rs = DB.update(sql);
         DB.disconnect();
@@ -213,13 +237,15 @@ public class User {
         DB.connect();
         PreparedStatement sql = DB.prepareStatement(
                 "UPDATE users " +
-                        "SET 'nik'=?, " +
-                        "'nama'=?, " +
-                        "'password'=?, " +
-                        "'pilihan'=?, " +
-                        "'isAdmin'=?, " +
-                        "'sudahMemilih'=?, " +
-                        "WHERE 'nik'=?"
+                        "SET " +
+                        "`nik`=?, " +
+                        "`nama`=?, " +
+                        "`password`=?, " +
+                        "`pilihan`=?, " +
+                        "`isAdmin`=?, " +
+                        "`sudahMemilih`=?, " +
+                        "`isInvited`=? " +
+                        "WHERE `nik`=?"
         );
         sql.setString(1, user.getNik());
         sql.setString(2, user.getNama());
@@ -233,7 +259,9 @@ public class User {
 
         sql.setBoolean(5, user.isAdmin());
         sql.setBoolean(6, user.isSudahMemilih());
-        sql.setString(7,oldNik);
+        sql.setBoolean(7, user.isInvited());
+        sql.setString(8,oldNik);
+        System.out.println(sql);
         int rs = DB.update(sql);
         DB.disconnect();
         return rs;
@@ -242,7 +270,9 @@ public class User {
     public static void main(String[] args) {
         try {
             User user = getByNIK("tes2");
-            System.out.println(user.getPasswordHash());
+            user.setInvited(true);
+            User.update(user.getNik(), user);
+            System.out.println(user.isInvited());
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
