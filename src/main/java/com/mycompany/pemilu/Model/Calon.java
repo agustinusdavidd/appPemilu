@@ -94,11 +94,12 @@ public class Calon {
     }
     public static int create(Calon calon) throws SQLException {
         DB.connect();
-        PreparedStatement sql = DB.prepareStatement("INSERT INTO calons(id, capres, cawapres) " +
-                "VALUES (?, ?, ?)");
+        PreparedStatement sql = DB.prepareStatement("INSERT INTO calons(id, capres, cawapres, visi_misi) " +
+                "VALUES (?, ?, ?, ?)");
         sql.setInt(1, calon.getId());
         sql.setString(2, calon.Capres);
         sql.setString(3, calon.Cawapres);
+        sql.setString(4, calon.visiMisi);
         int rs = DB.update(sql);
         DB.disconnect();
         return rs;
