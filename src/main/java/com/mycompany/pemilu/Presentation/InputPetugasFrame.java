@@ -172,6 +172,7 @@ public class InputPetugasFrame extends javax.swing.JFrame {
             try {
                 user = User.getByNIK(NIKPetugasTextField.getText());
                 TPS tps = new TPS("Bojongsoang", user);
+                TPS.create(tps);
             } catch (SQLException ex) {
                 Logger.getLogger(InputPetugasFrame.class.getName()).log(Level.SEVERE, null, ex);
             }
