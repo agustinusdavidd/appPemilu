@@ -117,6 +117,14 @@ public class User {
         this.id_tps = tps.getId();
     }
 
+    public int getId_tps() {
+        return id_tps;
+    }
+
+    public void setId_tps(int id_tps) {
+        this.id_tps = id_tps;
+    }
+
     private String hash256(String pass) {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
@@ -300,9 +308,7 @@ public class User {
     public static void main(String[] args) {
         try {
             User user = getByNIK("tes2");
-            user.id_tps = 1;
-            User.update(user.getNik(), user);
-            System.out.println(getByNIK(user.getNik()).id_tps);
+            System.out.println(user.isAdmin());
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
