@@ -27,124 +27,119 @@ public class ResultFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        jPanel3 = new javax.swing.JPanel();
         labelHeader = new javax.swing.JLabel();
-        labelPaslon1 = new javax.swing.JLabel();
-        labelPaslon2 = new javax.swing.JLabel();
         labelPaslon3 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        labelPaslon2 = new javax.swing.JLabel();
         labelPaslon4 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        labelPaslon1 = new javax.swing.JLabel();
         voteValue2 = new javax.swing.JLabel();
         BackButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setPreferredSize(new java.awt.Dimension(1366, 768));
-        jPanel1.setVerifyInputWhenFocusTarget(false);
+        jPanel3.setPreferredSize(new java.awt.Dimension(600, 400));
 
-        labelHeader.setFont(new java.awt.Font("Segoe UI", 0, 36)); // NOI18N
+        labelHeader.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
         labelHeader.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelHeader.setText("Hasil Voting Keseluruhan");
         labelHeader.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
-        labelPaslon1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        labelPaslon1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelPaslon1.setText("Total Vote: ");
-
-        labelPaslon2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        labelPaslon2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelPaslon2.setText("Nama Paslon 2");
-
-        labelPaslon3.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        labelPaslon3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         labelPaslon3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelPaslon3.setText("Nama Paslon 1");
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel1.setText("NilaiVote");
+        labelPaslon2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        labelPaslon2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelPaslon2.setText("Nama Paslon 2");
 
-        labelPaslon4.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        labelPaslon4.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         labelPaslon4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         labelPaslon4.setText("Total Vote: ");
 
-        voteValue2.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel1.setText("NilaiVote");
+
+        labelPaslon1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        labelPaslon1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelPaslon1.setText("Total Vote: ");
+
+        voteValue2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        voteValue2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         voteValue2.setText("NilaiVote");
 
         BackButton.setText("Back");
-        BackButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BackButtonActionPerformed(evt);
-            }
-        });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(645, 645, 645)
-                .addComponent(BackButton, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(474, 474, 474)
-                .addComponent(labelPaslon3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(246, 246, 246)
-                .addComponent(labelPaslon2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(408, 408, 408))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(436, 436, 436)
-                .addComponent(labelPaslon4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(213, 213, 213)
-                .addComponent(labelPaslon1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(voteValue2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(375, 375, 375))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(labelHeader, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(105, 105, 105)
+                .addComponent(labelPaslon3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(labelPaslon2)
+                .addGap(120, 120, 120))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addGap(0, 14, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(1, 1, 1)
+                        .addComponent(BackButton)
+                        .addGap(88, 88, 88)
+                        .addComponent(labelHeader))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(61, 61, 61)
+                        .addComponent(labelPaslon1)
+                        .addGap(18, 18, 18)
+                        .addComponent(voteValue2)
+                        .addGap(88, 88, 88)
+                        .addComponent(labelPaslon4)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel1)))
+                .addGap(85, 85, 85))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(labelHeader)
-                .addGap(55, 55, 55)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(labelPaslon2)
-                    .addComponent(labelPaslon3))
-                .addGap(417, 417, 417)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(30, 30, 30)
+                        .addComponent(labelHeader))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(BackButton)))
+                .addGap(47, 47, 47)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(labelPaslon3)
+                    .addComponent(labelPaslon2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 146, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelPaslon1)
-                    .addComponent(jLabel1)
                     .addComponent(voteValue2)
-                    .addComponent(labelPaslon4))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 72, Short.MAX_VALUE)
-                .addComponent(BackButton)
-                .addGap(60, 60, 60))
+                    .addComponent(labelPaslon4)
+                    .addComponent(jLabel1))
+                .addGap(106, 106, 106))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
-        MainFrame mf = new MainFrame();
-        
-        dispose();
-        mf.setVisible(true);
-        mf.setLocationRelativeTo(null);
-    }//GEN-LAST:event_BackButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -184,7 +179,7 @@ public class ResultFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BackButton;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel labelHeader;
     private javax.swing.JLabel labelPaslon1;
     private javax.swing.JLabel labelPaslon2;
