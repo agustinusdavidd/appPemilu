@@ -162,6 +162,10 @@ public class KirimUndanganFrame extends javax.swing.JFrame {
         // Add your code for processing the form data (if needed)
         // For now, you can show a success message
         JOptionPane.showMessageDialog(this, "Data berhasil ditambahkan!");
+            AdminControlFrame ac = new AdminControlFrame();
+            dispose();
+            ac.setVisible(true);
+            ac.setLocationRelativeTo(null);  
     } else {
         JOptionPane.showMessageDialog(this, "Minimum karakter 8!", "Warning!", JOptionPane.ERROR_MESSAGE);
     }

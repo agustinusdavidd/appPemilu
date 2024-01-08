@@ -201,10 +201,18 @@ public class InputPaslonFrame extends javax.swing.JFrame {
             // Check if any of the text fields is empty
     if (NIKKetuaTextField.getText().isEmpty() || NIKWakilTextField.getText().isEmpty() || VisiMisiTextArea.getText().isEmpty()) {
         JOptionPane.showMessageDialog(this, "Anda belum mengisi semua form!");
-    } else {
+    } else if((!NIKKetuaTextField.getText().isEmpty() || !NIKWakilTextField.getText().isEmpty() || !VisiMisiTextArea.getText().isEmpty()) && NIKKetuaTextField.getText().length() > 8 && NIKWakilTextField.getText().length() > 8){
         // Add your code for processing the form data (if needed)
         // For now, you can show a success message
         JOptionPane.showMessageDialog(this, "Data berhasil ditambahkan!");
+            AdminControlFrame ac = new AdminControlFrame();
+            dispose();
+            ac.setVisible(true);
+            ac.setLocationRelativeTo(null);
+    }else {
+        // Add your code for processing the form data (if needed)
+        // For now, you can show a success message
+        JOptionPane.showMessageDialog(this, "Minimum karakter NIK ada 8!", "Warning!", JOptionPane.ERROR_MESSAGE);
     }
     }//GEN-LAST:event_AddButtonActionPerformed
 

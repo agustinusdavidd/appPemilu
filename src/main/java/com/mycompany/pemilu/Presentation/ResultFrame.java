@@ -70,6 +70,11 @@ public class ResultFrame extends javax.swing.JFrame {
         voteValue2.setText("NilaiVote");
 
         BackButton.setText("Back");
+        BackButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                BackButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -140,6 +145,13 @@ public class ResultFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void BackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BackButtonActionPerformed
+            MainFrame mf = new MainFrame();
+            dispose();
+            mf.setVisible(true);
+            mf.setLocationRelativeTo(null);
+    }//GEN-LAST:event_BackButtonActionPerformed
 
     /**
      * @param args the command line arguments

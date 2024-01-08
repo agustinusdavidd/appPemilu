@@ -157,10 +157,18 @@ public class InputPetugasFrame extends javax.swing.JFrame {
     private void AddButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddButtonActionPerformed
         if (NIKPetugasTextField.getText().isEmpty()) {
         JOptionPane.showMessageDialog(this, "Anda belum mengisi semua form!");
-    } else {
+    } else if(!NIKPetugasTextField.getText().isEmpty() && NIKPetugasTextField.getText().length() > 8){
         // Add your code for processing the form data (if needed)
         // For now, you can show a success message
         JOptionPane.showMessageDialog(this, "Data berhasil ditambahkan!");
+            AdminControlFrame ac = new AdminControlFrame();
+            dispose();
+            ac.setVisible(true);
+            ac.setLocationRelativeTo(null);  
+    }else {
+        // Add your code for processing the form data (if needed)
+        // For now, you can show a success message
+        JOptionPane.showMessageDialog(this, "Minimum karakter NIK ada 8!", "Warning!", JOptionPane.ERROR_MESSAGE);
     }
     }//GEN-LAST:event_AddButtonActionPerformed
 
