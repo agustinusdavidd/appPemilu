@@ -80,7 +80,7 @@ public class TPS {
                         "VALUES(?, ?)"
         );
         sql.setString(1, tps.getLokasi());
-        sql.setString(2, tps.getPanitia().getNik());
+        sql.setString(2, tps.nik_panitia);
         int rs = DB.update(sql);
         DB.disconnect();
         return rs;
@@ -182,12 +182,8 @@ public class TPS {
 
     public static void main(String[] args) {
         try {
-            TPS tps1 = TPS.getByLokasi("bandung");
-            TPS.delete(tps1);
-            ArrayList<TPS> tpses = TPS.getByPanitia("wow");
-            for (TPS tps : tpses) {
-                System.out.println(tps.getLokasi());
-            }
+            TPS tps = new TPS("bandung", "");
+            TPS.create(tps);
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
