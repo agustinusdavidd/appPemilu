@@ -10,24 +10,41 @@ public class Calon {
     private String Capres;
     private String Cawapres;
 
-    public Calon(int id, String Capres, String Cawapres) {
+    protected Calon(int id, String Capres, String Cawapres) {
         this.id = id;
         this.Capres = Capres;
         this.Cawapres = Cawapres;
     }
 
-    public Calon(int id, User Capres, User Cawapres) {
+    protected Calon(int id, User Capres, User Cawapres) {
         this.id = id;
         setCapres(Capres);
         setCawapres(Cawapres);
     }
-    public Calon(int id, String Capres, User Cawapres) {
+    protected Calon(int id, String Capres, User Cawapres) {
         this.id = id;
         this.Capres = Capres;
         setCawapres(Cawapres);
     }
-    public Calon(int id, User Capres, String Cawapres) {
+    protected Calon(int id, User Capres, String Cawapres) {
         this.id = id;
+        setCapres(Capres);
+        this.Cawapres = Cawapres;
+    }
+    public Calon(String Capres, String Cawapres) {
+        this.Capres = Capres;
+        this.Cawapres = Cawapres;
+    }
+
+    public Calon(User Capres, User Cawapres) {
+        setCapres(Capres);
+        setCawapres(Cawapres);
+    }
+    public Calon(String Capres, User Cawapres) {
+        this.Capres = Capres;
+        setCawapres(Cawapres);
+    }
+    public Calon(User Capres, String Cawapres) {
         setCapres(Capres);
         this.Cawapres = Cawapres;
     }

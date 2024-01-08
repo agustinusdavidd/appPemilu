@@ -11,13 +11,13 @@ public class TPS {
     private String nik_panitia;
     private User panitia = null;
 
-    public TPS(int id, String lokasi, String nik_panitia) {
+    protected TPS(int id, String lokasi, String nik_panitia) {
         this.id = id;
         this.lokasi = lokasi;
         this.nik_panitia = nik_panitia;
     }
 
-    public TPS(int id, String lokasi, User panitia) {
+    protected TPS(int id, String lokasi, User panitia) {
         this.id = id;
         this.lokasi = lokasi;
         this.nik_panitia = panitia.getNik();
