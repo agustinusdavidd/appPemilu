@@ -1,6 +1,15 @@
 package UI;
 
+import Model.Remember;
+import Model.User;
+import Network.Database;
+import org.mindrot.jbcrypt.BCrypt;
+
 import javax.swing.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class Dashboard extends javax.swing.JFrame {
     /**
@@ -9,6 +18,8 @@ public class Dashboard extends javax.swing.JFrame {
     public Dashboard() {
         initComponents();
         setLocationRelativeTo(null);
+        setUserName();
+        checkIsAdmin();
     }
 
     /**
@@ -24,6 +35,7 @@ public class Dashboard extends javax.swing.JFrame {
         WelcomeLabel = new javax.swing.JLabel();
         ResultButton = new javax.swing.JButton();
         VoteButton = new javax.swing.JButton();
+
         AdminButton = new javax.swing.JButton();
         TPSLabel = new javax.swing.JLabel();
         LogoutButton = new javax.swing.JButton();
@@ -134,11 +146,49 @@ public class Dashboard extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
 
-    private String userName;
-    public void setUserName(String userName) {
-        this.userName = userName;
-        WelcomeLabel.setText("Selamat Datang, " + userName);
+    Remember r = new Remember();
+    String nama = r.getNama();
+    String nik = r.getNikLogin();
+
+    public void setUserName() {
+        WelcomeLabel.setText("Selamat Datang, " + nama);
     }
+
+    public void checkIsAdmin() {
+
+        try {
+            User user = User.getByNIK(nik);
+            if(!user.isAdmin()){
+                AdminButton.setVisible(false);
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(this, "Terjadi kesalahan pada database: " + e.getMessage());
+        }
+    }
+
+//        try {
+//            Connection conn = DriverManager.getConnection(Database.DB_URL, Database.DB_USER, Database.DB_PASSWORD);
+//
+//            String query = "SELECT isAdmin FROM users WHERE nik = ?";
+//
+//            try (PreparedStatement ps = conn.prepareStatement(query)) {
+//                ps.setString(1, nik);
+//                ResultSet rs = ps.executeQuery();
+//
+//                String isAdmin = rs.getString("isAdmin");
+//
+//                System.out.println(isAdmin);
+//
+//                if(isAdmin.equals("0")){
+//                    AdminButton.setVisible(false);
+//                }
+//            } catch (Exception e) {
+//                JOptionPane.showMessageDialog(this, "Terjadi kesalahan pada database: " + e.getMessage());
+//            }
+//        } catch (Exception e) {
+//            JOptionPane.showMessageDialog(this, "Terjadi kesalahan pada database: " + e.getMessage());
+//        }
+//    }
 
     private void ResultButtonActionPerformed(java.awt.event.ActionEvent evt) {
         Result r = new Result();
@@ -218,6 +268,7 @@ public class Dashboard extends javax.swing.JFrame {
             public void run() {
                 Dashboard Dashboard = new Dashboard();
                 Dashboard.setVisible(true);
+
             }
         });
     }

@@ -1,5 +1,6 @@
 package Controller;
 
+import Model.Remember;
 import Network.Database;
 import Rules.Validator;
 import Rules.validationResult;
@@ -74,6 +75,9 @@ public class LoginController {
                         String username = rs.getString("nama");
 
                         if(BCrypt.checkpw(password, hashedPasswordDB)) {
+
+                            Remember r = new Remember(nik, rs.getString("nama"));
+
                             loginStatus = true;
 
                             Dashboard d = new Dashboard();

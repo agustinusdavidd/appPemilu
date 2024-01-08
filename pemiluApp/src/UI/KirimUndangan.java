@@ -1,6 +1,13 @@
 package UI;
 
+import Controller.KirimUndanganController;
+import Network.Database;
+
 import javax.swing.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 public class KirimUndangan extends javax.swing.JFrame {
 
@@ -132,8 +139,38 @@ public class KirimUndangan extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Anda belum mengisi semua form!");
         } else {
 
+            KirimUndanganController kuc = new KirimUndanganController();
+
             int nomorTps = TPSComboBox.getSelectedIndex() + 1;
             String nik = jTextField1.getText();
+
+            try {
+                kuc.setTps(nomorTps);
+                kuc.setNik(nik);
+
+                Connection conn = DriverManager.getConnection(Database.DB_URL, Database.DB_USER, Database.DB_PASSWORD);
+
+                String query = "UPDATE users SET isInvited = ? WHERE nik = ?";
+
+                try (PreparedStatement preparedStatement = conn.prepareStatement(query)) {
+                    preparedStatement.setString(1, "1");
+                    preparedStatement.setString(2, nik);
+
+                    int rowAffected = preparedStatement.executeUpdate();
+
+                    if(rowAffected > 0) {
+                        JOptionPane.showMessageDialog(this, "Berhasil mengirim undangan!");
+                    }
+                } catch (Exception e) {
+                    JOptionPane.showMessageDialog(this, "Gagal");
+                }
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(this, "Terjadi kesalahan pada database: " + e.getMessage());
+            }
+
+            if(nomorTps > 0 && !(nik.isEmpty() || nik.isBlank())) {
+
+            }
 
             JOptionPane.showMessageDialog(this, "Data berhasil ditambahkan!");
         }
