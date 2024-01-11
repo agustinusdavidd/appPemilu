@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.VoteController">
+   <top>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #282828;" BorderPane.alignment="CENTER">
+         <children>
+            <Text fill="WHITE" layoutX="14.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pilihlah Sesuai Pilihan Anda" textAlignment="CENTER" wrappingWidth="1051.9921875">
+               <font>
+                  <Font name="Verdana Bold" size="24.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="680.0" style="-fx-background-color: #dbdbdb;" BorderPane.alignment="CENTER">
+         <children>
+            <Label fx:id="presiden1Header" alignment="CENTER" layoutX="21.0" layoutY="271.0" prefHeight="20.0" prefWidth="302.0" text="Nama Presiden">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="nomor1" layoutX="166.0" layoutY="32.0" text="1">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label fx:id="wakil1Header" alignment="CENTER" layoutX="11.0" layoutY="291.0" prefHeight="20.0" prefWidth="320.0" text="Nama Wakil Presiden">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="photo1" fitHeight="150.0" fitWidth="200.0" layoutX="96.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Users/user/Downloads/Logo%20Pemilu.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="visiMisi1" layoutX="145.0" layoutY="213.0" text="Visi Misi">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="visiMisi1Header" alignment="CENTER" contentDisplay="CENTER" layoutX="24.0" layoutY="242.0" prefHeight="17.0" prefWidth="295.0" text="Visi Misi" />
+            <Button fx:id="choose1Button" layoutX="151.0" layoutY="326.0" mnemonicParsing="false" onAction="#choose1OnAction" text="Pilih" />
+            <Label fx:id="nomor2" layoutX="505.0" layoutY="32.0" text="2">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="photo2" fitHeight="150.0" fitWidth="200.0" layoutX="435.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../../Users/user/Downloads/Logo%20Pemilu.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="visiMisi2" layoutX="484.0" layoutY="213.0" text="Visi Misi">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="choose2Button" layoutX="490.0" layoutY="326.0" mnemonicParsing="false" onAction="#choose2OnAction" text="Pilih" />
+            <Text fx:id="isVoteHeader" layoutX="165.0" layoutY="198.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anda Sudah Menggunakan Hak Suara Anda">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Text>
+            <Label fx:id="visiMisi2Header" alignment="CENTER" contentDisplay="CENTER" layoutX="363.0" layoutY="242.0" prefHeight="17.0" prefWidth="295.0" text="Visi Misi" />
+            <Label fx:id="presiden2Header" alignment="CENTER" layoutX="360.0" layoutY="271.0" prefHeight="20.0" prefWidth="302.0" text="Nama Presiden">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="wakil2Header" alignment="CENTER" layoutX="350.0" layoutY="291.0" prefHeight="20.0" prefWidth="320.0" text="Nama Wakil Presiden">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+   <left>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </left>
+   <right>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </right>
+   <bottom>
+      <Pane prefHeight="138.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button fx:id="resultButon" layoutX="490.0" layoutY="23.0" mnemonicParsing="false" onAction="#resultButtonOnAction" prefHeight="40.0" prefWidth="101.0" style="-fx-background-color: #282828; -fx-text-fill: white; -fx-font-weight: bold;" text="Hasil" />
+            <Button fx:id="backButton" layoutX="490.0" layoutY="76.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="40.0" prefWidth="101.0" style="-fx-background-color: #282828; -fx-text-fill: white; -fx-font-weight: bold;" text="Back" />
+         </children>
+      </Pane>
+   </bottom>
+</BorderPane>

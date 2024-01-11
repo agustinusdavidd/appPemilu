@@ -17,10 +17,6 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
-        double width = screenSize.getWidth();
-        double height = screenSize.getHeight();
-
         Parent root = FXMLLoader.load(getClass().getResource("UI/Login.fxml"));;
         stage.setScene(new Scene(root, 600, 400, Color.BLACK));
         stage.initStyle(StageStyle.UNDECORATED);

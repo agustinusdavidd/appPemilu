@@ -10,11 +10,6 @@ import java.util.ArrayList;
 
 public class User {
 
-    private static final String Database_URL = "jDatabasec:mysql://localhost:3306/tubes_pbo";
-    private static final String Database_USER = "root";
-    private static final String Database_PASS = "";
-    private static Connection conn;
-    private static Statement stmt;
     private String nik;
     private String nama;
     private String passwordHash;
@@ -53,6 +48,8 @@ public class User {
         this.sudahMemilih = sudahMemilih;
         this.isInvited = isInvited;
     }
+
+    public User(){}
 
     public String getNik() {
         return nik;
@@ -111,13 +108,25 @@ public class User {
     }
 
     public TPS getTPS() throws SQLException {
-        return id_tps == -1 ? null : TPS.getById(id_tps);
+
+        if (id_tps == -1 ) {
+            return new TPS(-1, "", "");
+        } else {
+            return TPS.getById(id_tps);
+        }
     }
 
     public void setTPS(TPS tps) {
         this.id_tps = tps.getId();
     }
 
+    public int getId_tps() {
+        return id_tps;
+    }
+
+    public void setId_tps(int id_tps) {
+        this.id_tps = id_tps;
+    }
     private String hash256(String pass) {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
@@ -198,6 +207,8 @@ public class User {
         Database.disconnect();
         return allUser;
     }
+
+
 
     public static User getByNIK(String nik) throws SQLException {
         Database.connect();
@@ -296,15 +307,61 @@ public class User {
         return rs;
     }
 
-    public static void main(String[] args) {
-        try {
-            User user = getByNIK("tes2");
-            user.id_tps = 1;
-            User.update(user.getNik(), user);
-            System.out.println(getByNIK(user.getNik()).id_tps);
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    public static void kirimUndangan(String nik, String tps) throws SQLException {
+        Database.connect();
+        PreparedStatement sql = Database.prepareStatement(
+                "UPDATE users " +
+                        "SET " +
+                        "`id_tps`=?, " +
+                        "`isInvited`=? " +
+                        "WHERE `nik`=?"
+        );
+        sql.setString(1, tps);
+        sql.setBoolean(2, true);
+        sql.setString(3, nik);
 
+        System.out.println(sql);
+        int rs = Database.update(sql);
+        Database.disconnect();
+        if(rs < 1) {
+            throw new SQLException("Update Error");
+        }
+    }
+
+    public static void setPetugas(String nik, String tps) throws SQLException {
+        Database.connect();
+        PreparedStatement sql = Database.prepareStatement(
+                "UPDATE tps " +
+                        "SET " +
+                        "`nik_panitia`=? " +
+                        "WHERE `id`=?"
+        );
+        sql.setString(1, nik);
+        sql.setString(2, tps);
+
+        System.out.println(sql);
+        int rs = Database.update(sql);
+        Database.disconnect();
+        if(rs < 1) {
+            throw new SQLException("Update Error");
+        }
+    }
+
+    public static void setMemilih(String oldNik, Boolean sudahMemilih) throws SQLException {
+        Database.connect();
+        PreparedStatement sql = Database.prepareStatement(
+                "UPDATE users " +
+                        "SET " +
+                        "`sudahMemilih`=? " +
+                        "WHERE `nik`=?"
+        );
+        sql.setBoolean(1, sudahMemilih);
+        sql.setString(2,oldNik);
+        System.out.println(sql);
+        int rs = Database.update(sql);
+        Database.disconnect();
+        if(rs < 1) {
+            throw new SQLException("Update Error");
+        }
     }
 }

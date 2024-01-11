@@ -4,19 +4,14 @@ import Model.Remember;
 import Network.Database;
 import Rules.Validator;
 import Rules.validationResult;
-import UI.Dashboard;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import org.mindrot.jbcrypt.BCrypt;
 
 import java.sql.Connection;
@@ -76,13 +71,11 @@ public class LoginController {
 
                         if(BCrypt.checkpw(password, hashedPasswordDB)) {
 
-                            Remember r = new Remember(nik, rs.getString("nama"));
+                            Remember r = new Remember(nik, username);
 
                             loginStatus = true;
 
-                            Dashboard d = new Dashboard();
-                            d.setVisible(true);
-                            d.setLocationRelativeTo(null);
+                            sc.switchToDashboard(e);
 
                             currentStage.close();
                         }
@@ -114,7 +107,6 @@ public class LoginController {
 
     }
     public void registerButtonOnAction(ActionEvent e) {
-
         Node sourceNode = (Node) loginButton;
         Stage currentStage = (Stage) sourceNode.getScene().getWindow();
 
@@ -125,7 +117,6 @@ public class LoginController {
         } catch (Exception exception) {
             System.out.println(exception);
         }
-
     }
     public void closeButtonOnAction(ActionEvent e) {
         Platform.exit();

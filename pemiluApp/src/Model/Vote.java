@@ -49,6 +49,8 @@ public class Vote {
         this.id_tps = id_tps;
     }
 
+    public Vote() {}
+
     public int getId() {
         return id;
     }
@@ -74,6 +76,10 @@ public class Vote {
             this.calon = Calon.getById(id_calon);
         }
         return calon;
+    }
+
+    public int getId_calon() throws SQLException {
+        return id_calon;
     }
 
     public void setCalon(Calon calon) {

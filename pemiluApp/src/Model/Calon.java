@@ -38,10 +38,13 @@ public class Calon {
         this.Cawapres = Cawapres;
         this.visiMisi = visiMisi;
     }
-    public Calon(String Capres, String Cawapres) {
+    public Calon(String Capres, String Cawapres, String visiMisi) {
         this.Capres = Capres;
         this.Cawapres = Cawapres;
+        this.visiMisi = visiMisi;
     }
+
+    public Calon() {}
 
     public int getId() {
         return id;
@@ -60,6 +63,9 @@ public class Calon {
     }
     public void setId(int id) {
         this.id = id;
+    }
+    public String getVisiMisi() throws SQLException {
+        return this.visiMisi == null ? null : visiMisi;
     }
 
     public static ArrayList<Calon> getAll() throws SQLException {
@@ -94,7 +100,7 @@ public class Calon {
         Database.disconnect();
         return calon;
     }
-    public static int create(Calon calon) throws SQLException {
+    public static void create(Calon calon) throws SQLException {
         Database.connect();
         PreparedStatement sql = Database.prepareStatement("INSERT INTO calons(id, capres, cawapres, visi_misi) " +
                 "VALUES (?, ?, ?, ?)");
@@ -104,7 +110,12 @@ public class Calon {
         sql.setString(4, calon.visiMisi);
         int rs = Database.update(sql);
         Database.disconnect();
-        return rs;
+
+        if(rs > 1) {
+            throw new SQLException("Something went wrong");
+        } else {
+            System.out.println("Creating object in table Calon");
+        }
     }
     public static int update(int toChange,Calon calon) throws SQLException {
         Database.connect();

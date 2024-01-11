@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.DashboardController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AdminController">
    <center>
       <GridPane hgap="10.0" vgap="5.0" BorderPane.alignment="CENTER_RIGHT">
         <columnConstraints>
@@ -23,7 +23,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button fx:id="voteButton" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#voteButtonOnAction" prefHeight="210.0" prefWidth="216.0" style="-fx-background-color: #282828; -fx-text-fill: white; -fx-font-weight: bold;" text="Coblos">
+            <Button fx:id="inputButton" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#inputButtonOnAction" prefHeight="210.0" prefWidth="216.0" style="-fx-background-color: #282828; -fx-text-fill: white; -fx-font-weight: bold;" text="Input Paslon">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -34,7 +34,7 @@
 <!--                  <FontIcon iconLiteral="fas-vote-yea" iconSize="38" />-->
 <!--               </graphic>-->
             </Button>
-            <Button fx:id="resultButton" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#resultButtonOnAction" prefHeight="210.0" prefWidth="216.0" style="-fx-background-color: #282828; -fx-text-fill: white; -fx-font-weight: bold;" text="Lihat Hasil" GridPane.columnIndex="1">
+            <Button fx:id="petugasButton" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#petugasButtonOnAction" prefHeight="210.0" prefWidth="216.0" style="-fx-background-color: #282828; -fx-text-fill: white; -fx-font-weight: bold;" text="Petugas TPS" GridPane.columnIndex="1">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -45,7 +45,7 @@
 <!--                  <FontIcon iconLiteral="fas-user-check" iconSize="38" />-->
 <!--               </graphic>-->
             </Button>
-            <Button fx:id="undanganButton" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#undanganButtonOnAction" prefHeight="210.0" prefWidth="216.0" style="-fx-background-color: #282828; -fx-text-fill: white; -fx-font-weight: bold;" text="Lihat Undangan" GridPane.columnIndex="2">
+            <Button fx:id="undanganButton" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onAction="#undanganButtonOnAction" prefHeight="210.0" prefWidth="216.0" style="-fx-background-color: #282828; -fx-text-fill: white; -fx-font-weight: bold;" text="Kirim Undangan" GridPane.columnIndex="2">
                <opaqueInsets>
                   <Insets />
                </opaqueInsets>
@@ -74,25 +74,24 @@
    <bottom>
       <AnchorPane prefHeight="138.0" prefWidth="1080.0" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="logoutButton" layoutX="490.0" layoutY="76.0" mnemonicParsing="false" onAction="#logoutButtonOnAction" prefHeight="40.0" prefWidth="101.0" style="-fx-background-color: #282828; -fx-text-fill: white; -fx-font-weight: bold;" text="Keluar" />
-            <Button fx:id="adminButton" layoutX="481.0" layoutY="23.0" mnemonicParsing="false" onAction="#adminButtonOnAction" prefHeight="40.0" prefWidth="118.0" style="-fx-background-color: #282828; -fx-font-weight: bold; -fx-text-fill: white;" text="Admin Control" />
+            <Button fx:id="backButton" layoutX="488.0" layoutY="76.0" mnemonicParsing="false" onAction="#backButtonOnAction" prefHeight="40.0" prefWidth="101.0" style="-fx-background-color: #282828; -fx-text-fill: white; -fx-font-weight: bold;" text="Back" />
          </children>
       </AnchorPane>
    </bottom>
    <top>
       <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #282828;" BorderPane.alignment="CENTER">
          <children>
-            <Text fx:id="welcomeHeader" fill="WHITE" layoutX="12.0" layoutY="70.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selamat Datang, David" textAlignment="CENTER" wrappingWidth="1057.0">
+            <Text fill="WHITE" layoutX="12.0" layoutY="89.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Admin Control" textAlignment="CENTER" wrappingWidth="1057.0">
                <font>
                   <Font name="Verdana Bold" size="24.0" />
                </font>
             </Text>
-            <Text fx:id="isMemilihHeader" fill="WHITE" layoutX="12.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Anda Belum Menggunakan Hak Pilih Anda" textAlignment="CENTER" wrappingWidth="1057.0">
+            <Text fx:id="nameHeader" fill="WHITE" layoutX="12.0" layoutY="130.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selamat Datang, David" textAlignment="CENTER" wrappingWidth="1057.0">
                <font>
                   <Font name="Verdana" size="18.0" />
                </font>
             </Text>
-            <Text fx:id="tpsHeader" fill="WHITE" layoutX="12.0" layoutY="149.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" text="Anda Terdaftar di TPS 1" textAlignment="CENTER" wrappingWidth="1057.0">
+            <Text fx:id="tpsHeader" fill="WHITE" layoutX="12.0" layoutY="149.0" smooth="false" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="1057.0">
                <font>
                   <Font name="Verdana Bold" size="18.0" />
                </font>
